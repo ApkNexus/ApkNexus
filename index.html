@@ -2,120 +2,76 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>APK Nexus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>APK Nexus - Inicio</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #111;
+      background: #0d0d0d;
       color: #eee;
     }
     header {
-      background-color: #1a1a1a;
-      padding: 20px;
+      background-color: #111;
+      padding: 25px;
       text-align: center;
-      font-size: 2rem;
+      font-size: 2.2rem;
+      color: #00ffaa;
       font-weight: bold;
-      color: #00ffaa;
-      box-shadow: 0 0 10px #00ffaa55;
+      box-shadow: 0 2px 10px rgba(0, 255, 170, 0.2);
     }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      background-color: #222;
-      padding: 10px 0;
-    }
-    nav a {
-      color: #00ffaa;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .grid {
+    .container {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 20px;
-      padding: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
     }
     .card {
-      background-color: #1f1f1f;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 10px #00ffaa22;
-      transition: transform 0.2s;
+      background-color: #1a1a1a;
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(0, 255, 170, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .card:hover {
       transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(0, 255, 170, 0.2);
     }
     .card img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 15px;
     }
-    .card-content {
-      padding: 15px;
-    }
-    .card-title {
+    .card h2 {
       font-size: 1.2rem;
-      margin-bottom: 10px;
-      color: #fff;
-    }
-    .card-desc {
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-    .download-btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 15px;
-      background-color: #00ffaa;
-      color: #111;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
+      margin: 0;
+      color: #00ffaa;
     }
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #1a1a1a;
-      color: #666;
-      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #777;
     }
   </style>
 </head>
 <body>
   <header>APK Nexus</header>
-  <nav>
-    <a href="#">🏠 Inicio</a>
-    <a href="#juegos">🎮 Juegos</a>
-    <a href="#edicion">🎞️ Edición de video</a>
-    <a href="#utilidades">🛠️ Utilidades</a>
-  </nav>
-  <main>
-    <section class="grid">
-      <!-- CapCut App -->
-      <div class="card">
-        <img src="capcut.png" alt="CapCut" />
-        <div class="card-content">
-          <div class="card-title">CapCut</div>
-          <div class="card-desc">Editor de video avanzado con funciones de IA, efectos, transiciones y más.<br>Versión: 9.2.0 | Tamaño: 130 MB</div>
-          <a class="download-btn" href="#">Descargar APK</a>
-        </div>
-      </div>
-
-      <!-- Espacios vacíos para nuevas apps -->
-      <div class="card">
-        <img src="https://via.placeholder.com/300x150.png?text=Próximamente" alt="Próximamente" />
-        <div class="card-content">
-          <div class="card-title">Próximamente</div>
-          <div class="card-desc">Aquí se añadirá una nueva aplicación próximamente.</div>
-        </div>
-      </div>
-    </section>
-  </main>
+  <div class="container">
+    <a href="capcut.html" class="card">
+      <img src="capcut.png" alt="CapCut" />
+      <h2>CapCut</h2>
+    </a>
+    <!-- Aquí puedes añadir más apps en el futuro -->
+  </div>
   <footer>
-    &copy; 2025 APK Nexus. Todos los derechos reservados.
+    © 2025 APK Nexus — Todos los derechos reservados
   </footer>
 </body>
 </html>
