@@ -38,7 +38,21 @@
       margin-bottom: 20px;
       text-align: justify;
     }
-    a.download-button {
+    .info {
+      background-color: #111;
+      border-left: 4px solid #00ffaa;
+      padding: 15px;
+      margin-bottom: 25px;
+    }
+    .info strong {
+      color: #00ffaa;
+    }
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    a.button {
       display: block;
       text-align: center;
       background: #00ffaa;
@@ -48,9 +62,8 @@
       border-radius: 12px;
       text-decoration: none;
       transition: background 0.3s ease;
-      margin-top: 20px;
     }
-    a.download-button:hover {
+    a.button:hover {
       background: #00ddaa;
     }
   </style>
@@ -61,12 +74,17 @@
       <img src="minecraft.png" alt="Minecraft Bedrock" />
       <h1>Minecraft Bedrock Edition</h1>
       <p>
-        Descarga la última versión de Minecraft Bedrock Edition totalmente gratis. Construye, sobrevive y explora en este clásico juego de bloques con gráficos mejorados y soporte multijugador.
+        Minecraft Bedrock es una versión optimizada del popular juego de bloques, ideal para dispositivos móviles. Explora mundos infinitos, construye, sobrevive y juega con amigos en línea. Esta versión incluye nuevas criaturas, herramientas, mejoras gráficas y soporte para mods básicos.
       </p>
-      <p>
-        Compatible con la mayoría de dispositivos Android. Esta versión incluye skins, mapas personalizados y mods básicos integrados para una experiencia completa.
-      </p>
-      <a class="download-button" href="https://cuty.io/MinecraftAPK">Descargar APK</a>
+      <div class="info">
+        <p><strong>Versión:</strong> 1.21.94.1</p>
+        <p><strong>Tamaño:</strong> 530 MB</p>
+        <p><strong>Licencia:</strong> Gratis</p>
+      </div>
+      <div class="buttons">
+        <a class="button" href="https://cuty.io/MinecraftAPK">Descargar APK</a>
+        <a class="button" href="index.html">Volver al inicio</a>
+      </div>
     </div>
   </div>
 </body>
