@@ -2,94 +2,97 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Minecraft Bedrock - APK Nexus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minecraft - APK Nexus</title>
   <style>
     body {
-      margin: 0;
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+      color: #eee;
       font-family: 'Segoe UI', sans-serif;
-      background: #0d0d0d;
-      color: #fff;
+      margin: 0;
+      padding: 0;
     }
-    .container {
-      max-width: 700px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-    .card {
-      background-color: #1a1a1a;
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 0 20px rgba(0, 255, 170, 0.1);
-    }
-    .card img {
-      width: 120px;
-      height: auto;
-      display: block;
-      margin: 0 auto 20px auto;
-    }
-    h1 {
+    header {
+      background-color: #111;
+      padding: 25px;
       text-align: center;
       color: #00ffaa;
+      font-size: 2.2rem;
+      font-weight: bold;
+      box-shadow: 0 2px 10px rgba(0, 255, 170, 0.2);
+    }
+    .content {
+      max-width: 860px;
+      margin: 30px auto;
+      background-color: #1b1b1b;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 0 15px rgba(0, 255, 170, 0.05);
+    }
+    .app-image {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 14px;
+      display: block;
+      margin: 0 auto 25px auto;
+      box-shadow: 0 0 15px rgba(0, 255, 170, 0.15);
+    }
+    h2 {
+      color: #fff;
+      text-align: center;
+      font-size: 1.8rem;
     }
     p {
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 20px;
-      text-align: justify;
+      color: #ccc;
+      line-height: 1.7;
+      margin: 10px 0;
     }
     .info {
-      background-color: #111;
-      border-left: 4px solid #00ffaa;
-      padding: 12px;
-      margin-bottom: 20px;
+      background-color: #222;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px 0;
     }
-    .info p {
-      margin: 6px 0;
-    }
-    .info strong {
-      color: #00ffaa;
-    }
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin-top: 20px;
-    }
-    a.button {
+    .download-btn {
       display: block;
-      text-align: center;
-      background: #00ffaa;
-      color: #000;
-      padding: 14px;
-      font-weight: bold;
-      border-radius: 12px;
+      background: linear-gradient(to right, #00ffaa, #00cc88);
+      color: #111;
+      padding: 15px 25px;
       text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      text-align: center;
+      margin: 30px auto 10px auto;
+      width: 220px;
+      box-shadow: 0 4px 10px rgba(0, 255, 170, 0.3);
       transition: background 0.3s ease;
     }
-    a.button:hover {
-      background: #00ddaa;
+    .download-btn:hover {
+      background: linear-gradient(to right, #00dd99, #00b377);
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+      color: #00ffaa;
+      text-decoration: none;
+      font-size: 0.95rem;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="card">
-      <img src="minecraft.png" alt="Minecraft Bedrock" />
-      <h1>Minecraft Bedrock Edition</h1>
-      <p>
-        Minecraft Bedrock es una edición del famoso juego de construcción y aventura, optimizada para dispositivos móviles. Explora mundos infinitos, crea estructuras impresionantes y juega en línea con amigos. ¡Construye, sobrevive y diviértete!
-      </p>
-      <div class="info">
-        <p><strong>Versión:</strong> 1.21.94.1</p>
-        <p><strong>Tamaño:</strong> 530 MB</p>
-        <p><strong>Licencia:</strong> Gratis</p>
-      </div>
-      <div class="buttons">
-        <a class="button" href="https://cuty.io/MinecraftAPK">Descargar APK</a>
-        <a class="button" href="index.html">Volver al inicio</a>
-      </div>
+  <header>Minecraft - Detalles</header>
+  <div class="content">
+    <img src="minecraft.png" alt="Minecraft Logo" class="app-image" />
+    <h2>Minecraft Bedrock (Última Versión)</h2>
+    <div class="info">
+      <p><strong>Versión:</strong> 1.21.94.1</p>
+      <p><strong>Tamaño:</strong> 530 MB</p>
+      <p><strong>Licencia:</strong> Gratis</p>
     </div>
+    <p><strong>Descripción:</strong> Minecraft Bedrock Edition es la versión móvil del juego de construcción y aventura más popular del mundo. Explora mundos infinitos, construye todo lo que puedas imaginar, sobrevive contra monstruos y juega con amigos desde tu móvil.</p>
+    <a class="download-btn" href="https://cuty.io/MinecraftAPK" target="_blank">⬇ Descargar APK</a>
+    <a class="back-link" href="index.html">⬅ Volver al inicio</a>
   </div>
 </body>
 </html>
