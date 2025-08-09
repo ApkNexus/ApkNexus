@@ -78,6 +78,29 @@
       text-decoration: none;
       font-size: 0.95rem;
     }
+    /* Reproductor de vídeo */
+    video {
+      width: 100%;
+      border-radius: 14px;
+      outline: none;
+      margin: 20px 0;
+      box-shadow: 0 0 15px rgba(0, 255, 170, 0.15);
+    }
+    /* Apartado instalación */
+    .install-section {
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 25px;
+    }
+    .install-section h3 {
+      color: #00ffaa;
+      margin-bottom: 10px;
+    }
+    .install-section ol {
+      color: #ccc;
+      padding-left: 20px;
+    }
   </style>
 </head>
 <body>
@@ -91,24 +114,44 @@
       <p><strong>Licencia:</strong> Gratis (Mod Premium)</p>
     </div>
     <p><strong>Descripción:</strong> Spotify es la plataforma líder en streaming de música y podcasts. Con esta versión Mod Premium podrás escuchar sin anuncios, descargar tus canciones favoritas y disfrutar de todas las funciones offline.</p>
+
+    <!-- REPRODUCTOR DE VÍDEO -->
+    <h2>📹 Video de Actualización</h2>
+    <video controls poster="spotify-preview.jpg">
+      <source src="spotify-actualizacion.mp4" type="video/mp4">
+      Tu navegador no soporta la reproducción de vídeo.
+    </video>
+
+    <!-- APARTADO DE INSTALACIÓN -->
+    <div class="install-section">
+      <h3>📥 Cómo instalar</h3>
+      <ol>
+        <li>Descarga el archivo APK desde el botón de abajo.</li>
+        <li>Ve a la configuración de tu teléfono y habilita “Orígenes desconocidos”.</li>
+        <li>Abre el APK descargado y sigue las instrucciones de instalación.</li>
+        <li>Disfruta de Spotify Premium Mod.</li>
+      </ol>
+    </div>
+
     <a class="download-btn" href="https://cuty.io/SpotifyPr1" target="_blank">⬇ Descargar APK</a>
     <a class="back-link" href="index.html">⬅ Volver al inicio</a>
   </div>
-<h2 style="text-align:center; color:#00ffaa;">💬 Comentarios</h2>
-<script src="https://giscus.app/client.js"
-        data-repo="ApkNexus/ApkNexus"
-        data-repo-id="R_kgDOPRuOqg"
-        data-category="General"
-        data-category-id="DIC_kwDOPRuOqs4Ctm33"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="1"
-        data-input-position="bottom"
-        data-theme="dark_dimmed"
-        data-lang="es"
-        crossorigin="anonymous"
-        async>
-</script>
+
+  <h2 style="text-align:center; color:#00ffaa;">💬 Comentarios</h2>
+  <script src="https://giscus.app/client.js"
+          data-repo="ApkNexus/ApkNexus"
+          data-repo-id="R_kgDOPRuOqg"
+          data-category="General"
+          data-category-id="DIC_kwDOPRuOqs4Ctm33"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="1"
+          data-input-position="bottom"
+          data-theme="dark_dimmed"
+          data-lang="es"
+          crossorigin="anonymous"
+          async>
+  </script>
 </body>
 </html>
