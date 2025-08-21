@@ -71,9 +71,6 @@
     }
     /* Responsive */
     @media screen and (max-width: 768px) {
-      .ad-banner {
-        margin: 15px 0; /* margen superior e inferior más pequeño en móviles */
-      }
       .ad-banner.bottom {
         position: fixed;
         bottom: 10px; /* margen desde el borde inferior */
@@ -82,7 +79,6 @@
         margin: 0;
         z-index: 1000;
         background-color: #0d0d0d;
-        transition: transform 0.3s ease, opacity 0.3s ease;
       }
       footer {
         padding-bottom: 80px; /* espacio para el banner flotante */
@@ -91,19 +87,6 @@
   </style>
 </head>
 <body>
-  <!-- Banner superior -->
-  <div class="ad-banner">
-    <script type="text/javascript">
-      atOptions = {
-        'key' : '68d7f43bf5438f1fb7d9bf3d865eb49d',
-        'format' : 'iframe',
-        'height' : 90,
-        'width' : 728,
-        'params' : {}
-      };
-    </script>
-    <script type="text/javascript" src="//www.highperformanceformat.com/68d7f43bf5438f1fb7d9bf3d865eb49d/invoke.js"></script>
-  </div>
 
   <header>APK Nexus</header>
 
@@ -141,7 +124,7 @@
   </div>
 
   <!-- Banner inferior -->
-  <div class="ad-banner bottom" id="bottomBanner">
+  <div class="ad-banner bottom">
     <script type="text/javascript">
       atOptions = {
         'key' : '68d7f43bf5438f1fb7d9bf3d865eb49d',
@@ -158,18 +141,5 @@
     © 2025 APK Nexus — Todos los derechos reservados
   </footer>
 
-  <!-- Script para banner inferior inteligente -->
-  <script>
-    const bottomBanner = document.getElementById('bottomBanner');
-    window.addEventListener('scroll', () => {
-      if(window.scrollY > 100){
-        bottomBanner.style.transform = 'translateY(100%)';
-        bottomBanner.style.opacity = '0';
-      } else {
-        bottomBanner.style.transform = 'translateY(0)';
-        bottomBanner.style.opacity = '1';
-      }
-    });
-  </script>
 </body>
 </html>
