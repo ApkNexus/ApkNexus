@@ -58,11 +58,61 @@
       padding: 20px;
       font-size: 0.9rem;
       color: #777;
+      position: relative;
+    }
+    .ad-banner {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .paypal-button {
+      background:#0070ba; 
+      color:white; 
+      border:none; 
+      padding:10px 20px; 
+      border-radius:8px; 
+      cursor:pointer;
+      margin-top: 10px;
+    }
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .ad-banner iframe {
+        width: 100% !important;
+        height: auto !important;
+      }
+      /* Banner inferior flotante */
+      .ad-banner.bottom {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        z-index: 1000;
+        background-color: #0d0d0d;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+      footer {
+        padding-bottom: 60px; /* espacio para el banner flotante */
+      }
     }
   </style>
 </head>
 <body>
   <header>APK Nexus</header>
+
+  <!-- Banner Adsterra arriba -->
+  <div class="ad-banner">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '68d7f43bf5438f1fb7d9bf3d865eb49d',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/68d7f43bf5438f1fb7d9bf3d865eb49d/invoke.js"></script>
+  </div>
+
   <div class="container">
     <a href="capcut.html" class="card">
       <img src="capcut.png" alt="CapCut" />
@@ -77,12 +127,51 @@
       <h2>Spotify</h2>
     </a>
     <a href="youtube.html" class="card">
-  <img src="youtube.png" alt="YouTube Premium" />
-  <h2>YouTube Premium</h2>
+      <img src="youtube.png" alt="YouTube Premium" />
+      <h2>YouTube Premium</h2>
     </a>
   </div>
+
+  <!-- Banner Adsterra abajo (flotante inteligente en móviles) -->
+  <div class="ad-banner bottom" id="bottomBanner">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '68d7f43bf5438f1fb7d9bf3d865eb49d',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/68d7f43bf5438f1fb7d9bf3d865eb49d/invoke.js"></script>
+  </div>
+
   <footer>
     © 2025 APK Nexus — Todos los derechos reservados
+    <div>
+      <!-- Botón de donación PayPal -->
+      <form action="https://www.paypal.com/donate" method="post" target="_blank">
+        <input type="hidden" name="hosted_button_id" value="TU_ID_DE_PAYPAL" />
+        <input type="submit" value="Donar con PayPal" class="paypal-button"/>
+      </form>
+    </div>
   </footer>
+
+  <!-- Script para banner inferior inteligente -->
+  <script>
+    const bottomBanner = document.getElementById('bottomBanner');
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 100){
+        bottomBanner.style.transform = 'translateY(100%)';
+        bottomBanner.style.opacity = '0';
+      } else {
+        bottomBanner.style.transform = 'translateY(0)';
+        bottomBanner.style.opacity = '1';
+      }
+      lastScrollY = window.scrollY;
+    });
+  </script>
 </body>
 </html>
