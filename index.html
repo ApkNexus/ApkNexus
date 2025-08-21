@@ -64,25 +64,19 @@
       text-align: center;
       margin: 20px 0;
     }
-    .paypal-button {
-      background:#0070ba; 
-      color:white; 
-      border:none; 
-      padding:10px 20px; 
-      border-radius:8px; 
-      cursor:pointer;
-      margin-top: 10px;
+    .ad-banner iframe {
+      max-width: 100%;
+      height: auto;
+      display: inline-block;
     }
     /* Responsive */
     @media screen and (max-width: 768px) {
-      .ad-banner iframe {
-        width: 100% !important;
-        height: auto !important;
+      .ad-banner {
+        margin: 15px 0; /* margen superior e inferior más pequeño en móviles */
       }
-      /* Banner inferior flotante */
       .ad-banner.bottom {
         position: fixed;
-        bottom: 0;
+        bottom: 10px; /* margen desde el borde inferior */
         left: 0;
         width: 100%;
         margin: 0;
@@ -91,15 +85,29 @@
         transition: transform 0.3s ease, opacity 0.3s ease;
       }
       footer {
-        padding-bottom: 60px; /* espacio para el banner flotante */
+        padding-bottom: 80px; /* espacio para el banner flotante */
       }
     }
   </style>
 </head>
 <body>
+  <!-- Banner superior -->
+  <div class="ad-banner">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '68d7f43bf5438f1fb7d9bf3d865eb49d',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/68d7f43bf5438f1fb7d9bf3d865eb49d/invoke.js"></script>
+  </div>
+
   <header>APK Nexus</header>
 
-  <!-- Banner Adsterra arriba -->
+  <!-- Banner intermedio -->
   <div class="ad-banner">
     <script type="text/javascript">
       atOptions = {
@@ -132,7 +140,7 @@
     </a>
   </div>
 
-  <!-- Banner Adsterra abajo (flotante inteligente en móviles) -->
+  <!-- Banner inferior -->
   <div class="ad-banner bottom" id="bottomBanner">
     <script type="text/javascript">
       atOptions = {
@@ -148,20 +156,11 @@
 
   <footer>
     © 2025 APK Nexus — Todos los derechos reservados
-    <div>
-      <!-- Botón de donación PayPal -->
-      <form action="https://www.paypal.com/donate" method="post" target="_blank">
-        <input type="hidden" name="hosted_button_id" value="TU_ID_DE_PAYPAL" />
-        <input type="submit" value="Donar con PayPal" class="paypal-button"/>
-      </form>
-    </div>
   </footer>
 
   <!-- Script para banner inferior inteligente -->
   <script>
     const bottomBanner = document.getElementById('bottomBanner');
-    let lastScrollY = window.scrollY;
-
     window.addEventListener('scroll', () => {
       if(window.scrollY > 100){
         bottomBanner.style.transform = 'translateY(100%)';
@@ -170,7 +169,6 @@
         bottomBanner.style.transform = 'translateY(0)';
         bottomBanner.style.opacity = '1';
       }
-      lastScrollY = window.scrollY;
     });
   </script>
 </body>
