@@ -101,6 +101,46 @@
       color: #ccc;
       padding-left: 20px;
     }
+    /* Botón copiar */
+    .copy-btn {
+      background: #00ffaa;
+      border: none;
+      padding: 6px 12px;
+      margin-left: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #111;
+      transition: background 0.3s ease;
+    }
+    .copy-btn:hover {
+      background: #00dd99;
+    }
+    /* Toast flotante estilo oscuro/neón */
+    .toast {
+      visibility: hidden;
+      min-width: 240px;
+      background: #111;
+      color: #00ffaa;
+      text-align: center;
+      border: 2px solid #00ffaa;
+      border-radius: 10px;
+      padding: 12px;
+      position: fixed;
+      left: 50%;
+      bottom: 30px;
+      transform: translateX(-50%);
+      font-weight: bold;
+      box-shadow: 0 0 15px rgba(0, 255, 170, 0.4);
+      opacity: 0;
+      transition: opacity 0.5s, bottom 0.5s;
+      z-index: 9999;
+    }
+    .toast.show {
+      visibility: visible;
+      opacity: 1;
+      bottom: 50px;
+    }
   </style>
 </head>
 <body>
@@ -122,6 +162,16 @@
       Tu navegador no soporta la reproducción de vídeo.
     </video>
 
+    <!-- APARTADO DE EXTENSIÓN -->
+    <div class="install-section">
+      <h3>🔗 Extensión necesaria</h3>
+      <p>
+        Enlace de la extensión: 
+        <span id="extension-link">https://raw.githubusercontent.com/itsmechinmoy/echo-extensions/main/echo_extensions.json</span>
+        <button onclick="copyText()" class="copy-btn">📋 Copiar</button>
+      </p>
+    </div>
+
     <!-- APARTADO DE INSTALACIÓN -->
     <div class="install-section">
       <h3>📥 Importante </h3>
@@ -129,7 +179,6 @@
         <li>Descarga el archivo APK desde el botón de abajo.</li>
         <li>Ve a la configuración de tu teléfono y habilita “Orígenes desconocidos”.</li>
         <li>El archivo APK debe tener "@ApkNexus" al final del nombre.</li>
-        <li>EXTENSIÓN: https://raw.githubusercontent.com/itsmechinmoy/echo-extensions/main/echo_extensions.json.</li>
       </ol>
     </div>
 
@@ -152,6 +201,22 @@
           data-lang="es"
           crossorigin="anonymous"
           async>
+  </script>
+
+  <!-- Toast -->
+  <div id="toast" class="toast">✅ Enlace copiado al portapapeles</div>
+
+  <script>
+  function copyText() {
+    const text = document.getElementById("extension-link").innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      const toast = document.getElementById("toast");
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2500);
+    });
+  }
   </script>
 </body>
 </html>
