@@ -117,21 +117,6 @@
       color: #ccc;
       padding-left: 22px;
     }
-    /* Botón copiar */
-    .copy-btn {
-      background: linear-gradient(to right, #007bff, #ff4500);
-      border: none;
-      padding: 6px 14px;
-      margin-left: 10px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      color: #fff;
-      transition: transform 0.2s ease;
-    }
-    .copy-btn:hover {
-      transform: scale(1.05);
-    }
     /* Toast flotante */
     .toast {
       visibility: hidden;
@@ -180,16 +165,6 @@
               allowfullscreen></iframe>
     </div>
 
-    <!-- APARTADO DE EXTENSIÓN -->
-    <div class="install-section">
-      <h3>🔗 Extensión necesaria</h3>
-      <p>
-        Enlace de la extensión: 
-        <span id="extension-link">https://raw.githubusercontent.com/itsmechinmoy/echo-extensions/main/echo_extensions.json</span>
-        <button onclick="copyText()" class="copy-btn">📋 Copiar</button>
-      </p>
-    </div>
-
     <!-- APARTADO DE INSTALACIÓN -->
     <div class="install-section">
       <h3>📥 Importante </h3>
@@ -200,7 +175,10 @@
       </ol>
     </div>
 
-    <a class="download-btn" href="https://cuty.io/SpotifyPr1" target="_blank">⬇ Descargar APK</a>
+    <!-- BOTONES DE DESCARGA -->
+    <a class="download-btn" href="https://cuty.io/SpotifyPr1" target="_blank">⬇ Premium off</a>
+    <a class="download-btn" href="https://cuty.io/TuSegundoEnlace" target="_blank">⬇ Premium on</a>
+
     <a class="back-link" href="index.html">⬅ Volver al inicio</a>
   </div>
 
@@ -226,7 +204,8 @@
 
   <script>
   function copyText() {
-    const text = document.getElementById("extension-link").innerText;
+    const text = document.getElementById("extension-link")?.innerText;
+    if (!text) return;
     navigator.clipboard.writeText(text).then(() => {
       const toast = document.getElementById("toast");
       toast.classList.add("show");
