@@ -60,10 +60,25 @@
       color: #777;
       position: relative;
     }
+    /* ---------- Banner styling ---------- */
     .ad-banner {
-      text-align: center;
-      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 25px 0;
     }
+    .ad-banner img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0, 255, 170, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .ad-banner img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 18px rgba(0, 255, 170, 0.3);
+    }
+
     /* Responsive */
     @media screen and (max-width: 768px) {
       .ad-banner.bottom {
@@ -74,6 +89,10 @@
         margin: 0;
         z-index: 1000;
         background-color: #0d0d0d;
+        padding: 5px 0;
+      }
+      .ad-banner img {
+        max-width: 95%;
       }
       footer {
         padding-bottom: 80px;
@@ -85,13 +104,11 @@
 
   <header>APK Nexus</header>
 
-  <!-- Banner intermedio (ShrinkEarn) -->
+  <!-- Banner superior ShrinkEarn -->
   <div class="ad-banner">
-    <!-- Start of banner code -->
     <a href="https://shrinkearn.com/ref/ApkNexus" target="_blank">
-      <img src="https://shrinkearn.com/webroot/modern_theme/img/468x60.gif" title="Shorten URLs and Earn Money" alt="ShrinkEarn" />
+      <img src="https://shrinkearn.com/webroot/modern_theme/img/468x60.gif" title="Shorten URLs and Earn Money" alt="ShrinkEarn">
     </a>
-    <!-- End of banner code -->
   </div>
 
   <div class="container">
@@ -121,13 +138,11 @@
     </a>
   </div>
 
-  <!-- Banner inferior (ShrinkEarn) -->
+  <!-- Banner inferior ShrinkEarn -->
   <div class="ad-banner bottom">
-    <!-- Start of banner code -->
     <a href="https://shrinkearn.com/ref/ApkNexus" target="_blank">
-      <img src="https://shrinkearn.com/webroot/modern_theme/img/468x60.gif" title="Shorten URLs and Earn Money" alt="ShrinkEarn" />
+      <img src="https://shrinkearn.com/webroot/modern_theme/img/468x60.gif" title="Shorten URLs and Earn Money" alt="ShrinkEarn">
     </a>
-    <!-- End of banner code -->
   </div>
 
   <footer>
