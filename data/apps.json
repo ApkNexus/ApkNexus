@@ -1,0 +1,32 @@
+[
+  {
+    "nombre": "CapCut",
+    "imagen": "assets/img/capcut.png",
+    "link": "capcut.html"
+  },
+  {
+    "nombre": "Minecraft Bedrock",
+    "imagen": "assets/img/minecraft.png",
+    "link": "minecraft.html"
+  },
+  {
+    "nombre": "Spotify",
+    "imagen": "assets/img/spotify.png",
+    "link": "spotify.html"
+  },
+  {
+    "nombre": "YouTube Premium",
+    "imagen": "assets/img/youtube.png",
+    "link": "youtube.html"
+  },
+  {
+    "nombre": "Netflix",
+    "imagen": "assets/img/netflix.png",
+    "link": "netflix.html"
+  },
+  {
+    "nombre": "GTA San Andreas",
+    "imagen": "assets/img/gta-sanandreas.png",
+    "link": "gta-sanandreas.html"
+  }
+]
