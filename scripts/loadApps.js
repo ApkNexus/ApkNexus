@@ -1,33 +1,21 @@
 fetch('data/apps.json')
   .then(res => res.json())
   .then(apps => {
-    const container = document.querySelector('.container');
-    container.innerHTML = ''; // limpia cualquier contenido previo
+    const container = document.getElementById('apps-container');
 
     apps.forEach((app, index) => {
-      const delay = index * 100; // animaciones escalonadas
+      // Generamos un ID automáticamente
+      const appId = index + 1;
 
-      const card = document.createElement('a');
-      card.href = app.link;
-      card.className = 'card';
-      card.setAttribute('data-aos', 'zoom-in');
-      card.setAttribute('data-aos-delay', delay);
-      card.innerHTML = `
-        <img src="${app.imagen}" alt="${app.nombre}">
-        <h2>${app.nombre}</h2>
-        <span class="btn">Descargar</span>
+      const card = `
+        <div class="card" id="app-${appId}" data-aos="fade-up">
+          <img src="images/${app.image}" alt="${app.name}" />
+          <h2>${app.name}</h2>
+          <p>${app.description}</p>
+          <a class="btn" href="${app.download}" target="_blank">Descargar</a>
+        </div>
       `;
-
-      // animación de aparición al cargar
-      card.style.opacity = '0';
-      setTimeout(() => {
-        card.style.transition = 'opacity 0.6s ease';
-        card.style.opacity = '1';
-      }, 200 + delay);
-
-      container.appendChild(card);
+      container.innerHTML += card;
     });
   })
-  .catch(error => {
-    console.error('Error al cargar las apps:', error);
-  });
+  .catch(err => console.error("Error cargando apps.json:", err));
