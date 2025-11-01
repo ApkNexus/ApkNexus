@@ -1,11 +1,10 @@
 [
   {
-    "id": 1,
     "name": "CapCut Pro Mod (2025)",
     "version": "15.5.0",
     "size": "300 MB aprox.",
     "license": "Gratis (Premium Mod)",
-    "description": "CapCut es un editor de video avanzado con IA, efectos cinematográficos, sincronización de audio, transiciones dinámicas y soporte para exportación en 4K. Perfecto para creadores que buscan un estilo moderno y profesional.",
+    "description": "CapCut es un editor de video avanzado con IA, efectos cinematográficos, sincronización de audio, transiciones dinámicas y soporte para exportación en 4K.",
     "image": "capcut.png",
     "download": "https://tpi.li/Capcut_Pro-APKNexus",
     "install_steps": [
@@ -16,12 +15,11 @@
     ]
   },
   {
-    "id": 2,
     "name": "GTA San Andreas (Android)",
     "version": "2.11.277",
     "size": "2.6 GB",
     "license": "Gratis (Incluye Mod APK)",
-    "description": "Grand Theft Auto: San Andreas es uno de los juegos más icónicos de Rockstar Games. Explora el mundo abierto de Los Santos, San Fierro y Las Venturas en tu dispositivo Android. Con gráficos mejorados, misiones clásicas, libertad total de juego y compatibilidad con controles externos.",
+    "description": "Grand Theft Auto: San Andreas es uno de los juegos más icónicos de Rockstar Games. Explora el mundo abierto en tu dispositivo Android.",
     "image": "gta-sanandreas.png",
     "download": "https://tpi.li/GTASanAndreas-APKNexus",
     "install_steps": [
@@ -29,68 +27,6 @@
       "Ve a Configuración > Seguridad y habilita “Orígenes desconocidos”.",
       "El archivo Apk debe terminar en @ApkNexus.",
       "Abre el juego y disfruta de GTA San Andreas en Android."
-    ]
-  },
-  {
-    "id": 3,
-    "name": "Minecraft Bedrock (Última Versión)",
-    "version": "v1.21.113.1",
-    "size": "530 MB",
-    "license": "Gratis",
-    "description": "Minecraft Bedrock Edition es la versión móvil del juego de construcción y aventura más popular del mundo. Explora mundos infinitos, construye todo lo que puedas imaginar, sobrevive contra monstruos y juega con amigos desde tu móvil.",
-    "image": "minecraft.png",
-    "download": "https://tpi.li/MinecraftPE-APKNexus",
-    "install_steps": [
-      "Descarga el archivo APK desde el botón de abajo.",
-      "Ve a la configuración de tu teléfono y habilita “Orígenes desconocidos”.",
-      "El archivo APK debe tener \"@ApkNexus\" al final del nombre.",
-      "Disfruta de Minecraft Bedrock."
-    ]
-  },
-  {
-    "id": 4,
-    "name": "Netflix Premium Mod (Actualizado)",
-    "version": "9.40.0",
-    "size": "50 MB",
-    "license": "Gratis (Mod Premium)",
-    "description": "Netflix es la plataforma de streaming más popular del mundo. Con esta versión modificada podrás disfrutar de películas, series y documentales sin restricciones, con soporte en múltiples dispositivos y calidad HD.",
-    "image": "netflix.png",
-    "download": "https://tpi.li/NETFLIX-APKNexus",
-    "install_steps": [
-      "Descarga el archivo APK desde el botón de abajo.",
-      "Ve a la configuración de tu teléfono y habilita “Orígenes desconocidos”.",
-      "El archivo APK debe tener \"@ApkNexus\" al final del nombre.",
-      "Disfruta de Netflix Premium Mod."
-    ]
-  },
-  {
-    "id": 5,
-    "name": "Spotify Premium (Última Versión)",
-    "version": "v9.0.90.1229",
-    "size": "86 MB",
-    "license": "Gratis (Mod Premium)",
-    "description": "Spotify es la plataforma líder en streaming de música y podcasts. Con esta versión Mod Premium podrás escuchar sin anuncios, descargar tus canciones favoritas y disfrutar de todas las funciones offline.",
-    "image": "spotify.png",
-    "download": "https://tpi.li/SPOTIFY-APKNexus",
-    "install_steps": [
-      "Descarga el archivo APK desde el botón de abajo.",
-      "Ve a la configuración de tu teléfono y habilita “Orígenes desconocidos”.",
-      "El archivo APK debe tener \"@ApkNexus\" al final del nombre."
-    ]
-  },
-  {
-    "id": 6,
-    "name": "YouTube Premium (Mod)",
-    "version": "v5.5.80.115",
-    "size": "18 MB",
-    "license": "Gratis (Mod Premium)",
-    "description": "YouTube Premium Mod permite reproducir música y videos en segundo plano y en ventana emergente (Picture-in-Picture). Esta versión no incluye la función de descarga de videos. Ideal para quienes buscan una experiencia sin interrupciones ni anuncios.",
-    "image": "youtube.png",
-    "download": "https://tpi.li/YOUTUBE-APKNexus",
-    "install_steps": [
-      "Descarga el archivo APK desde el botón de abajo.",
-      "Ve a la configuración de tu teléfono y habilita “Orígenes desconocidos”.",
-      "El archivo APK debe tener \"@ApkNexus\" al final del nombre."
     ]
   }
 ]
