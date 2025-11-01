@@ -4,16 +4,14 @@ fetch('data/apps.json')
     const container = document.getElementById('apps-container');
 
     apps.forEach((app, index) => {
-      // Generamos un ID automáticamente
       const appId = index + 1;
 
       const card = `
-        <div class="card" id="app-${appId}" data-aos="fade-up">
-          <img src="assets/img/${app.image}" alt="${app.name}" />
+        <a href="app.html?id=${appId}" class="card" data-aos="fade-up">
+          <img src="images/${app.image}" alt="${app.name}" />
           <h2>${app.name}</h2>
           <p>${app.description}</p>
-          <a class="btn" href="${app.download}" target="_blank">Descargar</a>
-        </div>
+        </a>
       `;
       container.innerHTML += card;
     });
