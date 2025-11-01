@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APK Nexus - App</title>
+
+  <!-- AOS (animaciones al hacer scroll) -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Particles.js para fondo animado -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d0d0d;
+      color: #eee;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    #particles-js {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      background: radial-gradient(circle at top, #0f0f0f, #000);
+    }
+
+    header {
+      background-color: rgba(17, 17, 17, 0.95);
+      padding: 25px;
+      text-align: center;
+      font-size: 2.2rem;
+      color: #00ffaa;
+      font-weight: bold;
+      box-shadow: 0 2px 15px rgba(0, 255, 170, 0.2);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
+
+    .app-container {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 30px;
+      background-color: rgba(26, 26, 26, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 255, 170, 0.1);
+      text-align: center;
+    }
+
+    .app-container img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 10px rgba(0, 255, 170, 0.3));
+      margin-bottom: 20px;
+    }
+
+    .app-container h1 {
+      color: #00ffaa;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      text-shadow: 0 0 8px rgba(0, 255, 170, 0.3);
+    }
+
+    .app-container p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #ddd;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 20px;
+      border: 2px solid #00ffaa;
+      border-radius: 10px;
+      color: #00ffaa;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: rgba(0, 255, 170, 0.2);
+      transition: left 0.4s;
+    }
+
+    .btn:hover::after { left: 0; }
+    .btn:active { transform: scale(0.95); }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="particles-js"></div>
+
+  <header data-aos="fade-down">APK Nexus</header>
+
+  <div class="app-container" id="app-details" data-aos="zoom-in">
+    <!-- Aquí se cargará la información de la app -->
+  </div>
+
+  <footer data-aos="fade-up">© 2025 APK Nexus — Todos los derechos reservados</footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 900, once: true });
+
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80 },
+        "color": { "value": "#00ffaa" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.3 },
+        "size": { "value": 3 },
+        "line_linked": { "enable": true, "distance": 150, "color": "#00ffaa", "opacity": 0.2, "width": 1 },
+        "move": { "enable": true, "speed": 1.5 }
+      },
+      "interactivity": {
+        "events": { "onhover": { "enable": true, "mode": "repulse" } },
+        "modes": { "repulse": { "distance": 100 } }
+      }
+    });
+
+    // --- Cargar datos de la app según ID ---
+    fetch('data/apps.json')
+      .then(res => res.json())
+      .then(apps => {
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
+        const app = apps[id - 1];
+
+        if (!app) {
+          document.getElementById('app-details').innerHTML = "<h2>App no encontrada 😕</h2>";
+          return;
+        }
+
+        document.getElementById('app-details').innerHTML = `
+          <img src="assets/img/${app.image}" alt="${app.name}">
+          <h1>${app.name}</h1>
+          <p>${app.description}</p>
+          <a href="${app.download}" class="btn" target="_blank">Descargar APK</a>
+        `;
+      })
+      .catch(err => {
+        console.error("Error cargando apps.json:", err);
+        document.getElementById('app-details').innerHTML = "<p>Error cargando los datos de la app.</p>";
+      });
+  </script>
+</body>
+</html>
