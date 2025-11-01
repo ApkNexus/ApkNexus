@@ -72,5 +72,19 @@
       "Ve a la configuración de tu teléfono y habilita “Orígenes desconocidos”.",
       "El archivo APK debe tener \"@ApkNexus\" al final del nombre."
     ]
+  },
+  {
+    "name": "YouTube Premium (Mod)",
+    "version": "v5.5.80.115",
+    "size": "18 MB",
+    "license": "Gratis (Mod Premium)",
+    "description": "YouTube Premium Mod permite reproducir música y videos en segundo plano y en ventana emergente (Picture-in-Picture). Esta versión no incluye la función de descarga de videos. Ideal para quienes buscan una experiencia sin interrupciones ni anuncios.",
+    "image": "youtube.png",
+    "download": "https://tpi.li/YOUTUBE-APKNexus",
+    "install_steps": [
+      "Descarga el archivo APK desde el botón de abajo.",
+      "Ve a la configuración de tu teléfono y habilita “Orígenes desconocidos”.",
+      "El archivo APK debe tener \"@ApkNexus\" al final del nombre."
+    ]
   }
 ]
