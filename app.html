@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>APK Nexus - App</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalles - APK Nexus</title>
 
-  <!-- AOS (animaciones al hacer scroll) -->
+  <!-- AOS Animations -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <!-- Particles.js para fondo animado -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -18,22 +16,13 @@
       background: #0d0d0d;
       color: #eee;
       overflow-x: hidden;
-      position: relative;
-    }
-
-    #particles-js {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: -1;
-      background: radial-gradient(circle at top, #0f0f0f, #000);
     }
 
     header {
       background-color: rgba(17, 17, 17, 0.95);
-      padding: 25px;
+      padding: 20px;
       text-align: center;
-      font-size: 2.2rem;
+      font-size: 1.8rem;
       color: #00ffaa;
       font-weight: bold;
       box-shadow: 0 2px 15px rgba(0, 255, 170, 0.2);
@@ -43,130 +32,164 @@
       z-index: 10;
     }
 
-    .app-container {
+    .back-btn {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      text-decoration: none;
+      color: #00ffaa;
+      font-weight: bold;
+      background: rgba(0, 255, 170, 0.1);
+      padding: 8px 15px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+    .back-btn:hover {
+      background: rgba(0, 255, 170, 0.3);
+      transform: translateX(-3px);
+    }
+
+    main {
       max-width: 900px;
-      margin: 60px auto;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    .app-card {
+      background: rgba(26, 26, 26, 0.95);
+      border-radius: 16px;
       padding: 30px;
-      background-color: rgba(26, 26, 26, 0.95);
-      border-radius: 20px;
-      box-shadow: 0 0 30px rgba(0, 255, 170, 0.1);
+      box-shadow: 0 0 20px rgba(0, 255, 170, 0.1);
       text-align: center;
     }
 
-    .app-container img {
+    .app-card img {
       width: 120px;
       height: 120px;
       object-fit: contain;
-      filter: drop-shadow(0 0 10px rgba(0, 255, 170, 0.3));
       margin-bottom: 20px;
+      filter: drop-shadow(0 0 10px rgba(0, 255, 170, 0.3));
     }
 
-    .app-container h1 {
-      color: #00ffaa;
+    .app-card h1 {
       font-size: 2rem;
-      margin-bottom: 15px;
+      color: #00ffaa;
+      margin-bottom: 10px;
       text-shadow: 0 0 8px rgba(0, 255, 170, 0.3);
     }
 
-    .app-container p {
-      font-size: 1rem;
+    .app-card p.description {
+      font-size: 1.1rem;
+      color: #ccc;
       line-height: 1.6;
-      color: #ddd;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 20px;
-      border: 2px solid #00ffaa;
+    .app-info {
+      background: rgba(13, 13, 13, 0.8);
+      padding: 15px 25px;
       border-radius: 10px;
+      text-align: left;
+      margin-bottom: 25px;
+      box-shadow: inset 0 0 10px rgba(0, 255, 170, 0.1);
+    }
+
+    .app-info p {
+      margin: 10px 0;
+      font-size: 1rem;
+    }
+
+    .app-info strong {
       color: #00ffaa;
+    }
+
+    .install-steps {
+      background: rgba(20, 20, 20, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: left;
+      margin-bottom: 25px;
+    }
+
+    .install-steps h3 {
+      color: #00ffaa;
+      margin-bottom: 10px;
+    }
+
+    .install-steps li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+      color: #ddd;
+    }
+
+    .download-section {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .btn-download {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #00ffaa;
+      color: #0d0d0d;
       text-decoration: none;
       font-weight: bold;
-      transition: 0.3s ease;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 255, 170, 0.3);
+      transition: 0.3s;
       position: relative;
       overflow: hidden;
     }
 
-    .btn::after {
+    .btn-download::after {
       content: '';
       position: absolute;
-      top: 0; left: -100%;
-      width: 100%; height: 100%;
-      background: rgba(0, 255, 170, 0.2);
-      transition: left 0.4s;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.6s;
     }
 
-    .btn:hover::after { left: 0; }
-    .btn:active { transform: scale(0.95); }
+    .btn-download:hover::after {
+      left: 100%;
+    }
+
+    .btn-download:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(0, 255, 170, 0.6);
+    }
 
     footer {
       text-align: center;
-      padding: 30px;
+      padding: 25px;
       font-size: 0.9rem;
       color: #777;
-      margin-top: 60px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .app-card h1 { font-size: 1.6rem; }
+      .app-card img { width: 100px; height: 100px; }
     }
   </style>
 </head>
+
 <body>
+  <header>
+    <a href="index.html" class="back-btn">← Volver</a>
+    APK Nexus
+  </header>
 
-  <div id="particles-js"></div>
+  <main id="app-details"></main>
 
-  <header data-aos="fade-down">APK Nexus</header>
+  <footer>© 2025 APK Nexus — Todos los derechos reservados</footer>
 
-  <div class="app-container" id="app-details" data-aos="zoom-in">
-    <!-- Aquí se cargará la información de la app -->
-  </div>
-
-  <footer data-aos="fade-up">© 2025 APK Nexus — Todos los derechos reservados</footer>
-
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="scripts/appPage.js"></script>
   <script>
     AOS.init({ duration: 900, once: true });
-
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 80 },
-        "color": { "value": "#00ffaa" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.3 },
-        "size": { "value": 3 },
-        "line_linked": { "enable": true, "distance": 150, "color": "#00ffaa", "opacity": 0.2, "width": 1 },
-        "move": { "enable": true, "speed": 1.5 }
-      },
-      "interactivity": {
-        "events": { "onhover": { "enable": true, "mode": "repulse" } },
-        "modes": { "repulse": { "distance": 100 } }
-      }
-    });
-
-    // --- Cargar datos de la app según ID ---
-    fetch('data/apps.json')
-      .then(res => res.json())
-      .then(apps => {
-        const params = new URLSearchParams(window.location.search);
-        const id = params.get('id');
-        const app = apps[id - 1];
-
-        if (!app) {
-          document.getElementById('app-details').innerHTML = "<h2>App no encontrada 😕</h2>";
-          return;
-        }
-
-        document.getElementById('app-details').innerHTML = `
-          <img src="assets/img/${app.image}" alt="${app.name}">
-          <h1>${app.name}</h1>
-          <p>${app.description}</p>
-          <a href="${app.download}" class="btn" target="_blank">Descargar APK</a>
-        `;
-      })
-      .catch(err => {
-        console.error("Error cargando apps.json:", err);
-        document.getElementById('app-details').innerHTML = "<p>Error cargando los datos de la app.</p>";
-      });
   </script>
 </body>
 </html>
