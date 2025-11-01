@@ -9,7 +9,7 @@ fetch('data/apps.json')
 
       const card = `
         <div class="card" id="app-${appId}" data-aos="fade-up">
-          <img src="images/${app.image}" alt="${app.name}" />
+          <img src="assets/img/${app.image}" alt="${app.name}" />
           <h2>${app.name}</h2>
           <p>${app.description}</p>
           <a class="btn" href="${app.download}" target="_blank">Descargar</a>
