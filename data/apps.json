@@ -86,5 +86,20 @@
       "Ve a la configuración de tu teléfono y habilita “Orígenes desconocidos”.",
       "El archivo APK debe tener \"@ApkNexus\" al final del nombre."
     ]
+  },
+  {
+    "name": "Lark Player (v6.31.5)",
+    "version": "6.31.5",
+    "size": "38 MB",
+    "license": "Gratis",
+    "description": "Lark Player es un potente reproductor de música para Android que ofrece ecualizador, letras en tiempo real, temas personalizados, temporizador de apagado y soporte para todos los formatos de audio populares.",
+    "image": "larkplayer.png",
+    "download": "https://tpi.li/LarkPlayer-APKNexus",
+    "install_steps": [
+      "Descarga el archivo APK desde el botón de abajo.",
+      "Activa “Orígenes desconocidos” en la configuración de tu teléfono.",
+      "Asegúrate de que el archivo termine en “@ApkNexus”.",
+      "Abre Lark Player y disfruta de tu música favorita."
+    ]
   }
 ]
