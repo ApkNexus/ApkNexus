@@ -21,7 +21,6 @@
     header {
       background-color: rgba(17, 17, 17, 0.95);
       padding: 20px;
-      text-align: center;
       font-size: 1.8rem;
       color: #00ffaa;
       font-weight: bold;
@@ -30,12 +29,15 @@
       top: 0;
       backdrop-filter: blur(8px);
       z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
     }
 
     .back-btn {
       position: absolute;
       left: 15px;
-      top: 15px;
       text-decoration: none;
       color: #00ffaa;
       font-weight: bold;
@@ -43,10 +45,29 @@
       padding: 8px 15px;
       border-radius: 10px;
       transition: 0.3s;
+      font-size: 1rem;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
+
+    .back-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: #00ffaa;
+      stroke-width: 2.2;
+      transition: 0.3s;
+    }
+
     .back-btn:hover {
       background: rgba(0, 255, 170, 0.3);
       transform: translateX(-3px);
+    }
+
+    .back-btn:hover svg {
+      stroke: #0d0d0d;
     }
 
     main {
@@ -172,14 +193,22 @@
     @media (max-width: 600px) {
       .app-card h1 { font-size: 1.6rem; }
       .app-card img { width: 100px; height: 100px; }
+      header { font-size: 1.5rem; }
+      .back-btn { padding: 6px 12px; font-size: 0.95rem; }
+      .back-btn svg { width: 16px; height: 16px; }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <a href="index.html" class="back-btn">← Volver</a>
-    APK Nexus
+    <a href="index.html" class="back-btn">
+      <svg viewBox="0 0 24 24">
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
+      Volver
+    </a>
+    <span>APK Nexus</span>
   </header>
 
   <main id="app-details"></main>
