@@ -116,5 +116,20 @@
       "Verifica que el archivo termine con “@ApkNexus”.",
       "Abre PowerDirector y disfruta de todas las funciones Premium desbloqueadas."
     ]
+  },
+  {
+    "name": "Geometry Dash (Android)",
+    "version": "2.2.143",
+    "size": "150 MB",
+    "license": "Gratis (Mod)",
+    "description": "Geometry Dash es un juego de plataformas rítmico desafiante donde debes saltar y volar a través de obstáculos al ritmo de la música. Esta versión Mod permite acceder a todos los niveles y personalizaciones desbloqueadas.",
+    "image": "geometrydash.png",
+    "download": "https://tpi.li/GeometryDash-APKNexus",
+    "install_steps": [
+      "Descarga el archivo APK desde el botón de abajo.",
+      "Habilita “Orígenes desconocidos” en la configuración de tu teléfono.",
+      "Asegúrate de que el archivo termine en “@ApkNexus”.",
+      "Abre Geometry Dash y disfruta de todos los niveles desbloqueados."
+    ]
   }
 ]
