@@ -101,5 +101,20 @@
       "Asegúrate de que el archivo termine en “@ApkNexus”.",
       "Abre Lark Player y disfruta de tu música favorita."
     ]
+  },
+  {
+    "name": "PowerDirector (Mod)",
+    "version": "15.8.1",
+    "size": "170 MB",
+    "license": "Premium (Mod)",
+    "description": "PowerDirector es un editor de video profesional con múltiples pistas, efectos avanzados, corrección de color, edición 4K, mezcla de audio y funciones impulsadas por IA. Ideal para creadores que buscan resultados de nivel profesional en Android.",
+    "image": "powerdirector.png",
+    "download": "https://tpi.li/PowerDirector-APKNexus",
+    "install_steps": [
+      "Descarga el archivo APK desde el botón de abajo.",
+      "Activa “Orígenes desconocidos” en la configuración de tu teléfono.",
+      "Verifica que el archivo termine con “@ApkNexus”.",
+      "Abre PowerDirector y disfruta de todas las funciones Premium desbloqueadas."
+    ]
   }
 ]
