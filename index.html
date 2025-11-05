@@ -2,9 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>APK Nexus - Inicio</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APK Nexus</title>
   <style>
     body {
       margin: 0;
@@ -15,121 +14,106 @@
 
     header {
       background: #111;
-      padding: 15px 0;
+      padding: 20px 0;
       text-align: center;
-      border-bottom: 1px solid #222;
+      color: #00d8ff;
+      font-size: 1.8em;
+      font-weight: bold;
     }
 
-    header h1 {
-      font-size: 1.6em;
-      color: #0ff;
-      margin: 0;
-      letter-spacing: 1px;
-      font-weight: 600;
-    }
-
-    /* 🔍 Buscador */
     .search-container {
-      display: flex;
-      justify-content: center;
-      margin: 15px 0 20px;
+      text-align: center;
+      padding: 15px;
+      background: #0d0d0d;
     }
 
     .search-container input {
-      width: 85%;
-      max-width: 400px;
-      padding: 10px 15px;
+      width: 90%;
+      max-width: 500px;
+      padding: 12px 15px;
+      border-radius: 10px;
       border: none;
-      border-radius: 20px;
-      outline: none;
       font-size: 1em;
-      background: #1a1a1a;
-      color: #fff;
-      box-shadow: 0 0 6px #00ffff33;
+      background: #1c1c1c;
+      color: #eee;
+      outline: none;
+      box-shadow: 0 0 8px rgba(0,0,0,0.5);
     }
 
-    /* 📱 Grid estilo AndroForever */
     #apps-container {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 15px;
-      padding: 10px;
-      width: 95%;
-      margin: 0 auto 40px auto;
+      padding: 20px;
+      justify-items: center;
     }
 
     .card {
-      background: #141414;
+      background: #1b1b1b;
       border-radius: 15px;
-      padding: 10px;
+      width: 100%;
+      max-width: 180px;
+      padding: 15px;
       text-align: center;
-      text-decoration: none;
       color: #eee;
-      box-shadow: 0 2px 6px #00000066;
-      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 0 10px #00ffff44;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
     }
 
     .card img {
       width: 100%;
-      height: 100px;
-      object-fit: cover;
       border-radius: 10px;
       margin-bottom: 10px;
     }
 
-    .card h2 {
-      font-size: 0.95em;
-      margin: 5px 0 10px;
-      color: #0ff;
-      font-weight: 600;
-    }
-
     .app-info {
       display: flex;
-      justify-content: space-between;
-      font-size: 0.75em;
+      justify-content: space-around;
+      font-size: 0.85em;
       color: #aaa;
-      background: #0e0e0e;
-      border-radius: 8px;
-      padding: 6px 8px;
+      margin-top: 5px;
     }
 
     footer {
       text-align: center;
-      padding: 15px;
+      padding: 20px;
+      background: #111;
+      color: #aaa;
       font-size: 0.9em;
-      color: #888;
-      border-top: 1px solid #222;
-      background: #0b0b0b;
+      margin-top: 40px;
+    }
+
+    @media (min-width: 600px) {
+      #apps-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (min-width: 900px) {
       #apps-container {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>APK Nexus</h1>
-  </header>
+
+  <header>APK Nexus</header>
 
   <div class="search-container">
     <input type="text" id="searchInput" placeholder="Buscar app...">
   </div>
 
-  <div id="apps-container">
-    <!-- Las apps se cargarán dinámicamente -->
-  </div>
+  <div id="apps-container"></div>
 
   <footer>
-    © 2025 APK Nexus - Todos los derechos reservados
+    © 2025 APK Nexus – Todos los derechos reservados
   </footer>
 
   <script src="loadapps.js"></script>
