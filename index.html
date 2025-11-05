@@ -75,25 +75,29 @@
       box-shadow: 0 0 10px rgba(0, 255, 170, 0.4);
     }
 
-    /* 📦 Contenedor de apps (rejilla 2x2 adaptable) */
+    /* 📦 Contenedor de apps (2x2 real como AndroForever) */
     #apps-container {
       display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 🔥 Dos columnas exactas */
-      gap: 20px;
+      grid-template-columns: repeat(2, minmax(0, 1fr)); /* 🔥 Fuerza 2 columnas iguales */
+      gap: 20px; /* 👌 Espaciado moderado */
       padding: 20px;
-      width: 90%;
+      width: 90%; /* 🔧 Tip opcional: ancho más compacto */
       margin: 0 auto 40px auto;
+      max-width: 900px; /* ✅ Evita que se estiren demasiado en pantallas grandes */
     }
 
+    /* 📱 Ajuste para pantallas pequeñas */
     @media (max-width: 600px) {
       #apps-container {
-        grid-template-columns: repeat(2, 1fr); /* Mantiene 2 columnas en pantallas pequeñas */
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas si el ancho lo permite */
+        gap: 15px;
       }
     }
 
+    /* 📱 Muy pequeño (teléfonos angostos) */
     @media (max-width: 400px) {
       #apps-container {
-        grid-template-columns: 1fr; /* Si la pantalla es muy angosta, 1 sola columna */
+        grid-template-columns: 1fr; /* 1 sola columna si no cabe */
       }
     }
 
