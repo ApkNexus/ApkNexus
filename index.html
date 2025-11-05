@@ -4,49 +4,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>APK Nexus - Inicio</title>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
+      margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: #0d0d0d;
       color: #eee;
-      overflow-x: hidden;
-      position: relative;
     }
 
     header {
-      background-color: rgba(17, 17, 17, 0.95);
-      padding: 25px;
       text-align: center;
-      font-size: 2.2rem;
+      padding: 30px 10px;
+      background: linear-gradient(180deg, #0f0f0f 0%, #141414 100%);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    }
+
+    header img {
+      width: 120px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #00ffaa;
+    }
+
+    header h1 {
       color: #00ffaa;
-      font-weight: bold;
-      box-shadow: 0 2px 15px rgba(0, 255, 170, 0.2);
-      position: sticky;
-      top: 0;
-      backdrop-filter: blur(8px);
-      z-index: 10;
+      text-shadow: 0 0 10px #00ffaa;
+      font-size: 2em;
+      margin-top: 10px;
+    }
+
+    header p {
+      color: #aaa;
+      margin-top: 5px;
     }
 
     .ad-banner {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 25px 0;
-      transition: transform 0.4s ease;
+      text-align: center;
+      margin: 20px auto;
     }
+
     .ad-banner img {
-      max-width: 90%;
-      height: auto;
+      width: 90%;
+      max-width: 468px;
       border-radius: 10px;
-      box-shadow: 0 0 12px rgba(0, 255, 170, 0.15);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-    .ad-banner img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(0, 255, 170, 0.3);
     }
 
     /* 🔍 Barra de búsqueda */
@@ -73,114 +74,71 @@
       box-shadow: 0 0 10px rgba(0, 255, 170, 0.4);
     }
 
-    .no-results {
-      text-align: center;
-      color: #888;
-      font-size: 1rem;
-      margin-top: 15px;
-      display: none;
-    }
-
-    /* 📱 Contenedor de apps */
-    .apps-grid {
+    /* 📦 Contenedor de apps */
+    #apps-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      padding: 40px;
-      max-width: 1000px;
-      margin: 0 auto;
-      position: relative;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      width: 90%;
+      margin: 0 auto 40px auto;
     }
 
+    /* 💠 Tarjetas */
     .card {
-      background-color: rgba(26, 26, 26, 0.95);
-      border-radius: 16px;
-      padding: 25px;
-      text-align: center;
+      display: block;
+      background: #141414;
+      border-radius: 18px;
+      padding: 15px;
+      box-shadow: 0 0 15px rgba(0,255,170,0.1);
       text-decoration: none;
       color: #fff;
-      box-shadow: 0 0 20px rgba(0, 255, 170, 0.1);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      position: relative;
-      overflow: hidden;
-      perspective: 1000px;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
+
     .card:hover {
-      transform: translateY(-10px) rotateX(4deg) rotateY(-4deg);
-      box-shadow: 0 0 30px rgba(0, 255, 170, 0.3);
+      transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(0,255,170,0.3);
     }
+
     .card img {
-      width: 80px; height: 80px;
-      object-fit: contain;
-      margin-bottom: 15px;
-      filter: drop-shadow(0 0 8px rgba(0, 255, 170, 0.3));
-    }
-    .card h2 {
-      font-size: 1.3rem;
-      color: #00ffaa;
-      text-shadow: 0 0 8px rgba(0, 255, 170, 0.3);
-    }
-
-    .card p {
-      color: #ddd;
-      margin-top: 8px;
-      font-size: 0.95rem;
-      min-height: 40px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 18px;
-      border: 2px solid #00ffaa;
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
       border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .card h2 {
+      font-size: 1rem;
+      margin: 5px 0;
       color: #00ffaa;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s ease;
-      position: relative;
-      overflow: hidden;
+      text-align: center;
     }
-    .btn::after {
-      content: '';
-      position: absolute;
-      top: 0; left: -100%;
-      width: 100%; height: 100%;
-      background: rgba(0, 255, 170, 0.2);
-      transition: left 0.4s;
+
+    .app-info {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #bbb;
+      line-height: 1.4;
     }
-    .btn:hover::after { left: 0; }
-    .btn:active { transform: scale(0.95); }
 
     footer {
       text-align: center;
       padding: 20px;
-      font-size: 0.9rem;
+      background: #0f0f0f;
       color: #777;
-      margin-top: 40px;
-      position: relative;
-    }
-
-    @media screen and (max-width: 768px) {
-      .ad-banner.bottom {
-        position: fixed;
-        bottom: 10px;
-        left: 0;
-        width: 100%;
-        margin: 0;
-        z-index: 1000;
-        background-color: rgba(13, 13, 13, 0.95);
-        padding: 5px 0;
-        backdrop-filter: blur(8px);
-      }
-      .ad-banner img { max-width: 95%; }
-      footer { padding-bottom: 80px; }
+      font-size: 0.9em;
+      border-top: 1px solid #1f1f1f;
     }
   </style>
 </head>
 <body>
-
-  <header data-aos="fade-down">APK Nexus</header>
+  <header data-aos="fade-down">
+    <img src="assets/img/logo.png" alt="APK Nexus">
+    <h1>APK Nexus</h1>
+    <p>Descarga las mejores apps y juegos modificados para Android</p>
+  </header>
 
   <div class="ad-banner" data-aos="fade-up">
     <a href="https://shrinkearn.com/ref/ApkNexus" target="_blank">
@@ -188,29 +146,22 @@
     </a>
   </div>
 
-  <!-- 🔍 Barra de búsqueda -->
+  <!-- 🔍 Buscador -->
   <div class="search-bar" data-aos="fade-up">
     <input type="text" id="searchInput" placeholder="🔍 Buscar aplicaciones..." />
-    <p id="noResults" class="no-results">No se encontraron resultados</p>
   </div>
 
-  <!-- 📱 Contenedor de apps -->
-  <div class="apps-grid" id="apps-container">
-    <!-- Aquí se cargarán automáticamente las apps desde data/apps.json -->
-  </div>
+  <div id="apps-container" data-aos="fade-up"></div>
 
-  <div class="ad-banner bottom" data-aos="fade-up">
-    <a href="https://shrinkearn.com/ref/ApkNexus" target="_blank">
-      <img src="https://shrinkearn.com/webroot/modern_theme/img/468x60.gif" alt="ShrinkEarn">
-    </a>
-  </div>
+  <footer>
+    <p>© 2025 APK Nexus. Todos los derechos reservados.</p>
+  </footer>
 
-  <footer data-aos="fade-up">© 2025 APK Nexus — Todos los derechos reservados</footer>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="scripts/loadApps.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 900, once: true });
   </script>
+
+  <script src="scripts/loadApps.js"></script>
 </body>
 </html>
