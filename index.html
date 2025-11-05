@@ -20,12 +20,13 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.4);
     }
 
-    header img {
+    /* 👇 Quitamos el logo por ahora */
+    /* header img {
       width: 120px;
       height: auto;
       border-radius: 15px;
       box-shadow: 0 0 10px #00ffaa;
-    }
+    } */
 
     header h1 {
       color: #00ffaa;
@@ -74,7 +75,7 @@
       box-shadow: 0 0 10px rgba(0, 255, 170, 0.4);
     }
 
-    /* 📦 Contenedor de apps */
+    /* 📦 Contenedor de apps (rejilla 2x2 adaptable) */
     #apps-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -86,7 +87,9 @@
 
     /* 💠 Tarjetas */
     .card {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       background: #141414;
       border-radius: 18px;
       padding: 15px;
@@ -94,6 +97,7 @@
       text-decoration: none;
       color: #fff;
       transition: transform 0.3s, box-shadow 0.3s;
+      height: 300px; /* 👈 Altura uniforme */
     }
 
     .card:hover {
@@ -121,6 +125,7 @@
       font-size: 0.9rem;
       color: #bbb;
       line-height: 1.4;
+      flex-grow: 1;
     }
 
     footer {
@@ -131,11 +136,17 @@
       font-size: 0.9em;
       border-top: 1px solid #1f1f1f;
     }
+
+    @media (max-width: 600px) {
+      .card {
+        height: auto; /* Ajuste automático en móviles */
+      }
+    }
   </style>
 </head>
 <body>
   <header data-aos="fade-down">
-    <img src="assets/img/logo.png" alt="APK Nexus">
+    <!-- Logo eliminado temporalmente -->
     <h1>APK Nexus</h1>
     <p>Descarga las mejores apps y juegos modificados para Android</p>
   </header>
