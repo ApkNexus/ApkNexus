@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>APK Nexus - Inicio</title>
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="styles.css"/>
   <style>
     body {
       margin: 0;
@@ -14,165 +14,124 @@
     }
 
     header {
+      background: #111;
+      padding: 15px 0;
       text-align: center;
-      padding: 30px 10px;
-      background: linear-gradient(180deg, #0f0f0f 0%, #141414 100%);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+      border-bottom: 1px solid #222;
     }
-
-    /* 👇 Quitamos el logo por ahora */
-    /* header img {
-      width: 120px;
-      height: auto;
-      border-radius: 15px;
-      box-shadow: 0 0 10px #00ffaa;
-    } */
 
     header h1 {
-      color: #00ffaa;
-      text-shadow: 0 0 10px #00ffaa;
-      font-size: 2em;
-      margin-top: 10px;
+      font-size: 1.6em;
+      color: #0ff;
+      margin: 0;
+      letter-spacing: 1px;
+      font-weight: 600;
     }
 
-    header p {
-      color: #aaa;
-      margin-top: 5px;
+    /* 🔍 Buscador */
+    .search-container {
+      display: flex;
+      justify-content: center;
+      margin: 15px 0 20px;
     }
 
-    .ad-banner {
-      text-align: center;
-      margin: 20px auto;
-    }
-
-    .ad-banner img {
-      width: 90%;
-      max-width: 468px;
-      border-radius: 10px;
-    }
-
-    /* 🔍 Barra de búsqueda */
-    .search-bar {
-      text-align: center;
-      margin: 20px auto;
-    }
-
-    .search-bar input {
-      width: 80%;
-      max-width: 500px;
-      padding: 12px 15px;
-      border-radius: 12px;
-      border: 2px solid #00ffaa;
-      background-color: rgba(26, 26, 26, 0.9);
-      color: #fff;
-      font-size: 1rem;
+    .search-container input {
+      width: 85%;
+      max-width: 400px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 20px;
       outline: none;
-      transition: 0.3s;
+      font-size: 1em;
+      background: #1a1a1a;
+      color: #fff;
+      box-shadow: 0 0 6px #00ffff33;
     }
 
-    .search-bar input:focus {
-      border-color: #00ffcc;
-      box-shadow: 0 0 10px rgba(0, 255, 170, 0.4);
-    }
-
-    /* 📦 Contenedor de apps (rejilla 2x2 adaptable) */
+    /* 📱 Grid estilo AndroForever */
     #apps-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      width: 90%;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+      padding: 10px;
+      width: 95%;
       margin: 0 auto 40px auto;
     }
 
-    /* 💠 Tarjetas */
     .card {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
       background: #141414;
-      border-radius: 18px;
-      padding: 15px;
-      box-shadow: 0 0 15px rgba(0,255,170,0.1);
+      border-radius: 15px;
+      padding: 10px;
+      text-align: center;
       text-decoration: none;
-      color: #fff;
+      color: #eee;
+      box-shadow: 0 2px 6px #00000066;
       transition: transform 0.3s, box-shadow 0.3s;
-      height: 300px; /* 👈 Altura uniforme */
     }
 
     .card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 20px rgba(0,255,170,0.3);
+      transform: translateY(-5px);
+      box-shadow: 0 0 10px #00ffff44;
     }
 
     .card img {
       width: 100%;
-      height: 120px;
+      height: 100px;
       object-fit: cover;
       border-radius: 10px;
       margin-bottom: 10px;
     }
 
     .card h2 {
-      font-size: 1rem;
-      margin: 5px 0;
-      color: #00ffaa;
-      text-align: center;
+      font-size: 0.95em;
+      margin: 5px 0 10px;
+      color: #0ff;
+      font-weight: 600;
     }
 
     .app-info {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #bbb;
-      line-height: 1.4;
-      flex-grow: 1;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75em;
+      color: #aaa;
+      background: #0e0e0e;
+      border-radius: 8px;
+      padding: 6px 8px;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      background: #0f0f0f;
-      color: #777;
+      padding: 15px;
       font-size: 0.9em;
-      border-top: 1px solid #1f1f1f;
+      color: #888;
+      border-top: 1px solid #222;
+      background: #0b0b0b;
     }
 
-    @media (max-width: 600px) {
-      .card {
-        height: auto; /* Ajuste automático en móviles */
+    @media (min-width: 900px) {
+      #apps-container {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
       }
     }
   </style>
 </head>
 <body>
-  <header data-aos="fade-down">
-    <!-- Logo eliminado temporalmente -->
+  <header>
     <h1>APK Nexus</h1>
-    <p>Descarga las mejores apps y juegos modificados para Android</p>
   </header>
 
-  <div class="ad-banner" data-aos="fade-up">
-    <a href="https://shrinkearn.com/ref/ApkNexus" target="_blank">
-      <img src="https://shrinkearn.com/webroot/modern_theme/img/468x60.gif" alt="ShrinkEarn">
-    </a>
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Buscar app...">
   </div>
 
-  <!-- 🔍 Buscador -->
-  <div class="search-bar" data-aos="fade-up">
-    <input type="text" id="searchInput" placeholder="🔍 Buscar aplicaciones..." />
+  <div id="apps-container">
+    <!-- Las apps se cargarán dinámicamente -->
   </div>
-
-  <div id="apps-container" data-aos="fade-up"></div>
 
   <footer>
-    <p>© 2025 APK Nexus. Todos los derechos reservados.</p>
+    © 2025 APK Nexus - Todos los derechos reservados
   </footer>
 
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 900, once: true });
-  </script>
-
-  <script src="scripts/loadApps.js"></script>
+  <script src="loadapps.js"></script>
 </body>
 </html>
