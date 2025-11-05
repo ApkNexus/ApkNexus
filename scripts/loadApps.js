@@ -3,7 +3,7 @@ fetch('data/apps.json')
   .then(apps => {
     const container = document.getElementById('apps-container');
 
-    // Crear las tarjetas
+    // Crear las tarjetas con versión, fecha y tamaño
     apps.forEach((app, index) => {
       const appId = index + 1;
 
@@ -15,7 +15,11 @@ fetch('data/apps.json')
       card.innerHTML = `
         <img src="assets/img/${app.image}" alt="${app.name}" />
         <h2>${app.name}</h2>
-        <p>${app.description}</p>
+        <div class="app-info">
+          <div>V${app.version}</div>
+          <div>${app.date}</div>
+          <div>${app.size}</div>
+        </div>
       `;
 
       container.appendChild(card);
@@ -29,9 +33,7 @@ fetch('data/apps.json')
 
       cards.forEach(card => {
         const name = card.querySelector('h2').textContent.toLowerCase();
-        const desc = card.querySelector('p').textContent.toLowerCase();
-
-        if (name.includes(filter) || desc.includes(filter)) {
+        if (name.includes(filter)) {
           card.style.display = '';
         } else {
           card.style.display = 'none';
