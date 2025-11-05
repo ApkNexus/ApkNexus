@@ -67,7 +67,7 @@
       box-shadow: 0 0 10px rgba(0, 255, 170, 0.4);
     }
 
-    /* ✅ Cuadrícula 2x2 REAL tipo AndroForever */
+    /* ✅ Cuadrícula 2x2 tipo AndroForever */
     #apps-container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -79,28 +79,25 @@
       box-sizing: border-box;
     }
 
-    /* 🔧 Forzar 2 columnas exactas en pantallas normales */
     @media (min-width: 500px) and (max-width: 999px) {
       #apps-container {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    /* 💻 En escritorio (más ancho) se verán 3 columnas */
     @media (min-width: 1000px) {
       #apps-container {
         grid-template-columns: repeat(3, 1fr);
       }
     }
 
-    /* 📱 En móviles muy pequeños */
     @media (max-width: 499px) {
       #apps-container {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    /* 💠 Tarjetas de app */
+    /* 💠 Tarjetas */
     .card {
       display: flex;
       flex-direction: column;
@@ -114,7 +111,7 @@
       color: #fff;
       transition: transform 0.3s, box-shadow 0.3s;
       width: 100%;
-      max-width: 180px; /* 🔥 Esto mantiene proporción tipo AndroForever */
+      max-width: 180px;
       height: 240px;
     }
 
@@ -173,29 +170,8 @@
     <input type="text" id="searchInput" placeholder="🔍 Buscar aplicaciones..." />
   </div>
 
-  <div id="apps-container" data-aos="fade-up">
-    <!-- Ejemplo de tarjetas para probar -->
-    <a href="#" class="card">
-      <img src="https://via.placeholder.com/150" alt="App 1">
-      <h2>App 1</h2>
-      <div class="app-info">Descripción breve.</div>
-    </a>
-    <a href="#" class="card">
-      <img src="https://via.placeholder.com/150" alt="App 2">
-      <h2>App 2</h2>
-      <div class="app-info">Descripción breve.</div>
-    </a>
-    <a href="#" class="card">
-      <img src="https://via.placeholder.com/150" alt="App 3">
-      <h2>App 3</h2>
-      <div class="app-info">Descripción breve.</div>
-    </a>
-    <a href="#" class="card">
-      <img src="https://via.placeholder.com/150" alt="App 4">
-      <h2>App 4</h2>
-      <div class="app-info">Descripción breve.</div>
-    </a>
-  </div>
+  <!-- 🧩 Contenedor de apps (vacío, lo llena loadApps.js) -->
+  <div id="apps-container" data-aos="fade-up"></div>
 
   <footer>
     <p>© 2025 APK Nexus. Todos los derechos reservados.</p>
