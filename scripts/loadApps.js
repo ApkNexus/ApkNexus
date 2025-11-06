@@ -3,6 +3,9 @@ fetch('data/apps.json')
   .then(apps => {
     const container = document.getElementById('apps-container');
 
+    // 🕒 Ordenar apps por fecha (de más nueva a más vieja)
+    apps.sort((a, b) => new Date(b.date) - new Date(a.date));
+
     // 🧩 Crear las tarjetas en formato 2x2
     apps.forEach((app, index) => {
       const appId = index + 1;
