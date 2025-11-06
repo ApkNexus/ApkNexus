@@ -42,10 +42,8 @@ fetch('data/apps.json')
       card.classList.add('card');
       card.setAttribute('data-aos', 'zoom-in');
 
-      // Evitar doble V
-      const versionText = app.version
-        ? (app.version.toLowerCase().startsWith('v') ? app.version : `V${app.version}`)
-        : 'Sin versión';
+      // Mostrar versión exactamente como está en el JSON
+      const versionText = app.version || 'Sin versión';
 
       card.innerHTML = `
         <img src="assets/img/${app.image}" alt="${app.name}" />
