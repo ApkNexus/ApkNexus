@@ -3,13 +3,12 @@ fetch('data/apps.json')
   .then(apps => {
     const container = document.getElementById('apps-container');
 
-    // 🗓️ Mapeo de meses en español
+    // 🗓️ Convertir fechas en español a formato de comparación
     const meses = {
       enero: 0, febrero: 1, marzo: 2, abril: 3, mayo: 4, junio: 5,
       julio: 6, agosto: 7, septiembre: 8, octubre: 9, noviembre: 10, diciembre: 11
     };
 
-    // 📅 Convierte “5 Noviembre 2025” → objeto Date
     function parseFecha(fecha) {
       if (!fecha) return new Date(0);
       const partes = fecha.trim().toLowerCase().split(' ');
@@ -20,10 +19,10 @@ fetch('data/apps.json')
       return new Date(año, mes, dia);
     }
 
-    // 🕒 Ordenar apps de más nueva a más antigua
+    // 🕒 Ordenar apps por fecha (de más nueva a más vieja)
     apps.sort((a, b) => parseFecha(b.date) - parseFecha(a.date));
 
-    // 🏷️ Título "Últimas actualizaciones"
+    // 🏷️ Encabezado
     const title = document.createElement('h2');
     title.textContent = '📅 Últimas actualizaciones';
     title.style.textAlign = 'center';
@@ -31,26 +30,34 @@ fetch('data/apps.json')
     title.style.marginTop = '20px';
     title.style.marginBottom = '10px';
     title.style.textShadow = '0 0 10px #00ffaa';
+    title.setAttribute('data-aos', 'fade-up');
     container.parentNode.insertBefore(title, container);
 
-    // 🧩 Crear tarjetas dinámicamente
+    // 🧩 Crear tarjetas
     apps.forEach((app, index) => {
       const appId = index + 1;
 
       const card = document.createElement('a');
       card.href = `app.html?id=${appId}`;
       card.classList.add('card');
+      card.setAttribute('data-aos', 'zoom-in');
 
-      // ✅ Mostrar versión exactamente como está en apps.json
-      let versionText = app.version?.trim() || 'Sin versión';
+      // ✅ Siempre mostrar "V" al inicio (una sola vez)
+      let version = app.version || 'Sin versión';
+      version = version.trim();
+      if (!/^v/i.test(version)) {
+        version = 'V' + version;
+      } else {
+        version = 'V' + version.replace(/^v/i, '');
+      }
 
       card.innerHTML = `
         <img src="assets/img/${app.image}" alt="${app.name}" />
         <h2>${app.name}</h2>
         <div class="app-info">
-          <div>${versionText}</div>
+          <div>${version}</div>
           <div>${app.date || "Sin fecha"}</div>
-          <div>${app.size || "Tamaño desconocido"}</div>
+          <div>${app.size}</div>
         </div>
       `;
 
@@ -59,22 +66,18 @@ fetch('data/apps.json')
 
     // 🔍 Buscador
     const searchInput = document.getElementById('searchInput');
-    if (searchInput) {
-      searchInput.addEventListener('input', () => {
-        const filter = searchInput.value.toLowerCase();
-        const cards = container.querySelectorAll('.card');
+    searchInput.addEventListener('input', () => {
+      const filter = searchInput.value.toLowerCase();
+      const cards = container.querySelectorAll('.card');
 
-        cards.forEach(card => {
-          const name = card.querySelector('h2').textContent.toLowerCase();
-          card.style.display = name.includes(filter) ? '' : 'none';
-        });
+      cards.forEach(card => {
+        const name = card.querySelector('h2').textContent.toLowerCase();
+        card.style.display = name.includes(filter) ? '' : 'none';
       });
-    }
+    });
   })
   .catch(err => {
     console.error("Error cargando apps.json:", err);
     const container = document.getElementById('apps-container');
-    if (container) {
-      container.innerHTML = `<p style="text-align:center; color:#f66;">Error al cargar las aplicaciones 😔</p>`;
-    }
+    container.innerHTML = `<p style="text-align:center; color:#f66;">Error al cargar las aplicaciones 😔</p>`;
   });
