@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>APK Nexus - Inicio</title>
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <style>
     /* Base */
     * { box-sizing: border-box; }
@@ -71,33 +70,30 @@
       box-shadow: 0 0 12px rgba(0, 255, 170, 0.25);
     }
 
-    /* Contenedor (centrado y con max-width para controlar estirado) */
+    /* Contenedor */
     #apps-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 24px;              /* <- separación entre tarjetas (ajustada) */
+      gap: 24px;
       justify-items: center;
       padding: 20px;
       width: 92%;
-      max-width: 1100px;     /* evita que se estiren demasiado en desktop */
+      max-width: 1100px;
       margin: 0 auto 50px auto;
     }
 
-    /* Forzar 2 columnas en tamaños intermedios (móvil grande / tablet) */
     @media (min-width: 480px) and (max-width: 999px) {
       #apps-container {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    /* Desktop: 3 columnas si hay espacio */
     @media (min-width: 1000px) {
       #apps-container {
         grid-template-columns: repeat(3, 1fr);
       }
     }
 
-    /* Muy pequeño: 1 o 2 columnas según ancho */
     @media (max-width: 479px) {
       #apps-container {
         grid-template-columns: repeat(2, 1fr);
@@ -119,8 +115,8 @@
       color: #fff;
       transition: transform 0.18s ease, box-shadow 0.18s ease;
       width: 100%;
-      max-width: 240px;  /* aumenta tamaño visual y mantiene proporción */
-      height: 300px;     /* altura uniforme para que alineen bien */
+      max-width: 240px;
+      height: 300px;
       overflow: hidden;
     }
 
@@ -168,45 +164,38 @@
   </style>
 </head>
 <body>
-  <header data-aos="fade-down">
+  <header>
     <h1>APK Nexus</h1>
     <p>Descarga las mejores apps y juegos modificados para Android</p>
   </header>
 
-  <div class="ad-banner" data-aos="fade-up">
+  <div class="ad-banner">
     <a href="https://shrinkearn.com/ref/ApkNexus" target="_blank" rel="noopener">
       <img src="https://shrinkearn.com/webroot/modern_theme/img/468x60.gif" alt="ShrinkEarn">
     </a>
   </div>
 
   <!-- Buscar -->
-  <div class="search-bar" data-aos="fade-up">
+  <div class="search-bar">
     <input type="text" id="searchInput" placeholder="🔍 Buscar aplicaciones..." />
   </div>
 
-  <!-- Contenedor de apps (vacío, lo llena loadApps.js) -->
-  <div id="apps-container" data-aos="fade-up"></div>
+  <!-- Contenedor de apps -->
+  <div id="apps-container"></div>
 
   <footer>
     <p>© 2025 APK Nexus. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Limpieza segura: evita tarjetas de prueba antiguas -->
+  <!-- Limpieza segura -->
   <script>
     (function(){
-      // Si el elemento existe, lo dejamos vacío antes de que loadApps.js lo llene.
       const c = document.getElementById('apps-container');
       if (c) c.innerHTML = '';
     })();
   </script>
 
-  <!-- tu AOS y script de carga (sin cambios en nombres) -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 900, once: true });
-  </script>
-
-  <!-- carga el script que crea las tarjetas -->
+  <!-- Se eliminó AOS (animaciones) solo para esta página -->
   <script src="scripts/loadApps.js"></script>
 </body>
 </html>
