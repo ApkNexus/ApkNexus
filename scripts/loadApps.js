@@ -6,6 +6,17 @@ fetch('data/apps.json')
     // 🕒 Ordenar apps por fecha (de más nueva a más vieja)
     apps.sort((a, b) => new Date(b.date) - new Date(a.date));
 
+    // 🏷️ Agregar encabezado de "Últimas actualizaciones" arriba del grid
+    const title = document.createElement('h2');
+    title.textContent = '📅 Últimas actualizaciones';
+    title.style.textAlign = 'center';
+    title.style.color = '#00ffaa';
+    title.style.marginTop = '20px';
+    title.style.marginBottom = '10px';
+    title.style.textShadow = '0 0 10px #00ffaa';
+    title.setAttribute('data-aos', 'fade-up');
+    container.parentNode.insertBefore(title, container);
+
     // 🧩 Crear las tarjetas en formato 2x2
     apps.forEach((app, index) => {
       const appId = index + 1;
