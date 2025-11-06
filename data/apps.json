@@ -1,5 +1,6 @@
 [
   {
+    "id": "capcut-pro",
     "name": "CapCut Pro (Mod)",
     "version": "15.5.0",
     "date": "5 Noviembre 2025",
@@ -16,6 +17,7 @@
     ]
   },
   {
+    "id": "gta-san-andreas",
     "name": "GTA San Andreas (Android)",
     "version": "2.11.277",
     "date": "5 Noviembre 2025",
@@ -32,6 +34,7 @@
     ]
   },
   {
+    "id": "minecraft-bedrock",
     "name": "Minecraft Bedrock (Android)",
     "version": "1.21.113.1",
     "date": "5 Noviembre 2025",
@@ -48,6 +51,7 @@
     ]
   },
   {
+    "id": "netflix-premium",
     "name": "Netflix Premium (Mod)",
     "version": "9.40.0",
     "date": "5 Noviembre 2025",
@@ -64,6 +68,7 @@
     ]
   },
   {
+    "id": "spotify-premium",
     "name": "Spotify Premium (Mod)",
     "version": "9.0.90.1229",
     "date": "5 Noviembre 2025",
@@ -79,6 +84,7 @@
     ]
   },
   {
+    "id": "youtube-premium",
     "name": "YouTube Premium (Mod)",
     "version": "v5.5.80.122",
     "date": "6 Noviembre 2025",
@@ -94,6 +100,7 @@
     ]
   },
   {
+    "id": "lark-player",
     "name": "Lark Player (Mod)",
     "version": "6.31.5",
     "date": "5 Noviembre 2025",
@@ -110,6 +117,7 @@
     ]
   },
   {
+    "id": "powerdirector",
     "name": "PowerDirector (Mod)",
     "version": "15.8.1",
     "date": "5 Noviembre 2025",
@@ -126,6 +134,7 @@
     ]
   },
   {
+    "id": "geometry-dash",
     "name": "Geometry Dash (Android)",
     "version": "2.2.143",
     "date": "5 Noviembre 2025",
