@@ -30,7 +30,6 @@ fetch('data/apps.json')
     title.style.marginTop = '20px';
     title.style.marginBottom = '10px';
     title.style.textShadow = '0 0 10px #00ffaa';
-    title.setAttribute('data-aos', 'fade-up');
     container.parentNode.insertBefore(title, container);
 
     // 🧩 Crear tarjetas
@@ -40,15 +39,12 @@ fetch('data/apps.json')
       const card = document.createElement('a');
       card.href = `app.html?id=${appId}`;
       card.classList.add('card');
-      card.setAttribute('data-aos', 'zoom-in');
 
-      // ✅ Siempre mostrar "V" al inicio (una sola vez)
+      // ✅ Mostrar “V” solo si no existe ya
       let version = app.version || 'Sin versión';
       version = version.trim();
       if (!/^v/i.test(version)) {
         version = 'V' + version;
-      } else {
-        version = 'V' + version.replace(/^v/i, '');
       }
 
       card.innerHTML = `
