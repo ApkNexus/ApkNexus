@@ -31,7 +31,7 @@ fetch('data/apps.json')
 
     apps.forEach(app => {
       const card = document.createElement('a');
-      card.href = `app.html?id=${app.id}`; // usa id
+      card.href = `app.html?id=${app.id}`;
       card.classList.add('card');
 
       let version = app.version || 'Sin versión';
