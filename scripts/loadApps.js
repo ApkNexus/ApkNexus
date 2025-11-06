@@ -3,10 +3,26 @@ fetch('data/apps.json')
   .then(apps => {
     const container = document.getElementById('apps-container');
 
-    // 🕒 Ordenar apps por fecha (de más nueva a más vieja)
-    apps.sort((a, b) => new Date(b.date) - new Date(a.date));
+    // 🗓️ Función para convertir fechas en español a formato válido
+    const meses = {
+      enero: 0, febrero: 1, marzo: 2, abril: 3, mayo: 4, junio: 5,
+      julio: 6, agosto: 7, septiembre: 8, octubre: 9, noviembre: 10, diciembre: 11
+    };
 
-    // 🏷️ Agregar encabezado de "Últimas actualizaciones" arriba del grid
+    function parseFecha(fecha) {
+      if (!fecha) return new Date(0);
+      const partes = fecha.trim().toLowerCase().split(' ');
+      if (partes.length < 3) return new Date(0);
+      const dia = parseInt(partes[0]);
+      const mes = meses[partes[1]] ?? 0;
+      const año = parseInt(partes[2]);
+      return new Date(año, mes, dia);
+    }
+
+    // 🕒 Ordenar apps por fecha (de más nueva a más vieja)
+    apps.sort((a, b) => parseFecha(b.date) - parseFecha(a.date));
+
+    // 🏷️ Encabezado de "Últimas actualizaciones"
     const title = document.createElement('h2');
     title.textContent = '📅 Últimas actualizaciones';
     title.style.textAlign = 'center';
@@ -17,7 +33,7 @@ fetch('data/apps.json')
     title.setAttribute('data-aos', 'fade-up');
     container.parentNode.insertBefore(title, container);
 
-    // 🧩 Crear las tarjetas en formato 2x2
+    // 🧩 Crear las tarjetas (2x2)
     apps.forEach((app, index) => {
       const appId = index + 1;
 
@@ -26,11 +42,16 @@ fetch('data/apps.json')
       card.classList.add('card');
       card.setAttribute('data-aos', 'zoom-in');
 
+      // Evitar doble V
+      const versionText = app.version
+        ? (app.version.toLowerCase().startsWith('v') ? app.version : `V${app.version}`)
+        : 'Sin versión';
+
       card.innerHTML = `
         <img src="assets/img/${app.image}" alt="${app.name}" />
         <h2>${app.name}</h2>
         <div class="app-info">
-          <div>V${app.version}</div>
+          <div>${versionText}</div>
           <div>${app.date || "Sin fecha"}</div>
           <div>${app.size}</div>
         </div>
