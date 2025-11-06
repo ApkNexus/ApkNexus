@@ -2,8 +2,9 @@ fetch('data/apps.json')
   .then(res => res.json())
   .then(apps => {
     const params = new URLSearchParams(window.location.search);
-    const appId = parseInt(params.get('id'));
-    const app = apps[appId - 1];
+    const appId = params.get('id');
+
+    const app = apps.find(a => a.id === appId);
 
     if (!app) {
       document.body.innerHTML = "<h2 style='text-align:center; color:#fff;'>App no encontrada</h2>";
@@ -37,6 +38,6 @@ fetch('data/apps.json')
     `;
   })
   .catch(err => {
-    console.error("Error cargando app.json:", err);
+    console.error("Error cargando apps.json:", err);
     document.body.innerHTML = "<h2 style='text-align:center; color:#fff;'>Error cargando la información</h2>";
   });
