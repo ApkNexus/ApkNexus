@@ -149,5 +149,21 @@
       "Asegúrate de que el archivo termine en “@ApkNexus”.",
       "Abre Geometry Dash y disfruta de todos los niveles desbloqueados."
     ]
-  }
-]
+  },
+  {
+    "id": "stardew-valley-android",
+    "name": "Stardew Valley (Android)",
+    "version": "2.2.143",
+    "date": "7 Noviembre 2025",
+    "size": "300 MB",
+    "license": "Gratis (Mod)",
+    "description": "Geometry Dash es un juego de plataformas rítmico desafiante donde debes saltar y volar a través de obstáculos al ritmo de la música. Esta versión Mod permite acceder a todos los niveles y personalizaciones desbloqueadas.",
+    "image": "stardewvalley.png",
+    "download": "https://tpi.li/StardewValley-APKNexus",
+    "install_steps": [
+      "Descarga el archivo APK desde el botón de abajo.",
+      "Habilita “Orígenes desconocidos” en la configuración de tu teléfono.",
+      "Asegúrate de que el archivo termine en “@ApkNexus”.",
+      "Abre StardewValley y disfruta de uno de los mejores juegos rpg de Android."
+    ]
+  },
