@@ -149,5 +149,22 @@
       "Asegúrate de que el archivo termine en “@ApkNexus”.",
       "Abre Geometry Dash y disfruta de todos los niveles desbloqueados."
     ]
+  },
+  {
+    "id": "stardew-valley-android",
+    "name": "Stardew Valley (Android)",
+    "version": "1.6.15.0",
+    "date": "7 Noviembre 2025",
+    "size": "377 MB",
+    "license": "Gratis (Mod)",
+    "description": "Stardew Valley es un galardonado RPG de simulación de granja donde heredas una vieja parcela y la transformas en un hogar próspero. Cultiva, cría animales, explora cuevas, pesca y haz amigos en este encantador mundo abierto.",
+    "image": "stardewvalley.png",
+    "download": "https://tpi.li/StardewValley-APKNexus",
+    "install_steps": [
+      "Descarga el archivo APK desde el botón de abajo.",
+      "Habilita “Orígenes desconocidos” en la configuración de tu teléfono.",
+      "Asegúrate de que el archivo termine en “@ApkNexus”.",
+      "Abre StardewValley y disfruta de uno de los mejores juegos rpg de Android."
+    ]
   }
 ]
