@@ -166,5 +166,22 @@
       "Asegúrate de que el archivo termine en “@ApkNexus”.",
       "Abre StardewValley y disfruta de uno de los mejores juegos rpg de Android."
     ]
+  },
+  {
+    "id": "youtube-music-premium-mod",
+    "name": "YouTube Music Premium (Mod)",
+    "version": "6.53.51",
+    "date": "14 Noviembre 2025",
+    "size": "24 MB",
+    "license": "Gratis (Mod)",
+    "description": "YouTube Music Premium Mod permite escuchar música sin anuncios, reproducir en segundo plano, usar el modo audio-solo, cambiar canciones libremente y acceder a playlists sin limitaciones.",
+    "image": "youtube-music.png",
+    "download": "https://tpi.li/YTMusicPremium-APKNexus",
+    "install_steps": [
+      "Descarga el archivo APK desde el botón de abajo.",
+      "Ve a la configuración de tu teléfono y habilita “Orígenes desconocidos”.",
+      "El archivo APK debe tener \"@ApkNexus\" al final del nombre.",
+      "Abre YouTube Music y disfruta de todas las funciones Premium desbloqueadas."
+    ]
   }
 ]
