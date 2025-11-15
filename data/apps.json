@@ -178,9 +178,10 @@
     "image": "youtube-music.png",
     "download": "https://tpi.li/YTMusicPremium-APKNexus",
     "install_steps": [
-      "Primero, instale MicroG APK.",
-      "Luego instale la aplicación Youtube Music Premium y ábrela.",
-      "Ingrese a su cuenta y disfruta.",
+      "Descarga el archivo APK desde el botón de abajo.",
+      "Ve a la configuración de tu teléfono y habilita “Orígenes desconocidos”.",
+      "El archivo APK debe tener \"@ApkNexus\" al final del nombre.",
+      "Abre YouTube Music y disfruta de todas las funciones Premium desbloqueadas."
     ]
   }
 ]
