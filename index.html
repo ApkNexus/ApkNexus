@@ -15,7 +15,7 @@
       color: #eee;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      padding-bottom: 72px; /* espacio para el menú inferior fijo */
+      padding-bottom: 90px; /* espacio para menú inferior */
     }
 
     header {
@@ -106,32 +106,17 @@
     }
 
     @media (min-width: 480px) and (max-width: 999px) {
-      #apps-container {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      #apps-container { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (min-width: 1000px) {
-      #apps-container {
-        grid-template-columns: repeat(3, 1fr);
-      }
+      #apps-container { grid-template-columns: repeat(3, 1fr); }
     }
 
     @media (max-width: 479px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .logo-container {
-        justify-content: center;
-        margin-bottom: 8px;
-      }
-
-      #apps-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-      }
+      header { flex-direction: column; text-align: center; }
+      .logo-container { justify-content: center; margin-bottom: 8px; }
+      #apps-container { grid-template-columns: repeat(2, 1fr); gap: 16px; }
     }
 
     /* Tarjetas */
@@ -195,7 +180,7 @@
       border-top: 1px solid #1f1f1f;
     }
 
-    /* Menú inferior fijo (tipo Play Store) */
+    /* Menú inferior fijo */
     .bottom-nav {
       position: fixed;
       bottom: 0;
@@ -210,7 +195,6 @@
     }
 
     .bottom-nav a {
-      color: #eee;
       text-align: center;
       font-size: 0.8rem;
       text-decoration: none;
@@ -218,17 +202,18 @@
       flex-direction: column;
       align-items: center;
       gap: 4px;
-    }
-
-    .bottom-nav a:hover {
-      color: #00ffaa;
+      color: #eee;
     }
 
     .bottom-nav svg {
-      width: 22px;
-      height: 22px;
-      fill: currentColor;
+      width: 26px;
+      height: 26px;
     }
+
+    /* Colores íconos (oficiales) */
+    .bottom-nav a.home svg { fill: #eee; }        /* casa en blanco */
+    .bottom-nav a.youtube svg { fill: #FF0000; }  /* YouTube rojo */
+    .bottom-nav a.telegram svg { fill: #0088cc; } /* Telegram azul */
   </style>
 </head>
 <body>
@@ -258,30 +243,32 @@
     <p>© 2025 APK Nexus. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Menú inferior fijo -->
+  <!-- Menú inferior fijo (SVGs válidos y simples) -->
   <nav class="bottom-nav">
-    <a href="index.html">
-      <svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>
+    <a href="index.html" class="home">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 12l9-9 9 9v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/>
+      </svg>
       <span>Inicio</span>
     </a>
-    <a href="https://youtube.com/@apknexus-n4x?si=ad3EQERCplN1RXGJ" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><path d="M10 15.5l6-3.5-6-3.5v7zm13-5.5s-.2-1.6-.8-2.3c-.8-.9-1.7-.9-2.1-1C17.9 2.5 12 2.5 12 2.5h-.1s-5.9 0-8.6.4c-.4.1-1.3.1-2.1 1-.6.7-.8 2.3-.8 2.3S0 8.1 0 10v4c0 1.9.2 3.8.2 3.8s.2 1.6.8 2.3c.8.9 1.9.9 2.4 1 1.7.2 7.2.4 8.6.4h.1c5.9 0 8.6-.4 8.6-.4.4-.1 1.3-.1 2.1-1 .6-.7.8-2.3.8-2.3s.2-1.9.2-3.8v-4c0-1.9-.2-3.8-.2-3.8z"/></svg>
+
+    <a href="https://youtube.com/@apknexus-n4x?si=ad3EQERCplN1RXGJ" target="_blank" rel="noopener" class="youtube">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M23.5 6.2c-.1-.7-.3-1.6-.8-2.3-.8-.9-1.7-.9-2.1-1C17.9 2.5 12 2.5 12 2.5s-5.9 0-8.6.4c-.4.1-1.3.1-2.1 1-.6.7-.8 1.6-.8 2.3C0 8.1 0 10 0 10v4c0 1.9.2 3.8.2 3.8.1.7.3 1.6.8 2.3.8.9 1.9.9 2.4 1 1.7.2 7.2.4 8.6.4s6.9-.1 8.6-.4c.4-.1 1.3-.1 2.1-1 .5-.7.7-1.6.8-2.3.2-1.2.2-3.8.2-3.8V10s0-2.6-.2-3.8z"/>
+        <polygon fill="#fff" points="9.5,15.5 15.7,12 9.5,8.5"/>
+      </svg>
       <span>YouTube</span>
     </a>
-    <a href="https://t.me/APK_Nexus" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><path d="M21.5 3.5L2.7 10.6c-1 .4-1 1.7 0 2l4.7 1.5 1.8 5.6c.3.9 1.5 1.1 2.1.4l2.8-3.1 5.5 4.1c.8.6 2 .1 2.3-.9l3.1-15.2c.2-1- .6-1.8-1.5-1.5z"/></svg>
+
+    <a href="https://t.me/APK_Nexus" target="_blank" rel="noopener" class="telegram">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21.5 3.5L2.4 10.4c-.9.3-.9 1.6 0 1.9l4.9 1.6 1.8 5.6c.3.9 1.4 1.1 2 .4l2.9-3.1 5.5 4c.8.6 2 .1 2.2-.9l3.1-15.1c.2-1-.6-1.8-1.5-1.5z"/>
+      </svg>
       <span>Telegram</span>
     </a>
   </nav>
 
-  <!-- Limpieza segura -->
-  <script>
-    (function(){
-      const c = document.getElementById('apps-container');
-      if (c) c.innerHTML = '';
-    })();
-  </script>
-
+  <!-- Mantén el script de carga al final -->
   <script src="scripts/loadApps.js"></script>
 </body>
 </html>
