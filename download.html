@@ -143,7 +143,7 @@
 </head>
 <body>
   <header>
-    <a href="javascript:history.back()" class="back-btn">
+    <a id="backBtn" href="#" class="back-btn">
       <svg viewBox="0 0 24 24">
         <path d="M15 18l-6-6 6-6" />
       </svg>
@@ -177,10 +177,26 @@
 
   <script>
     const params = new URLSearchParams(window.location.search);
-    const url = params.get('url'); // enlace real de descarga
+    const url = params.get('url');     // enlace real de descarga
+    const appId = params.get('id');    // id para volver al detalle
     let timeLeft = 7;
     const counter = document.getElementById('counter');
     const btn = document.getElementById('downloadBtn');
+    const backBtn = document.getElementById('backBtn');
+
+    // Configura el botón Volver
+    if (appId) {
+      backBtn.href = `app.html?id=${encodeURIComponent(appId)}`;
+    } else {
+      backBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (document.referrer) {
+          history.back();
+        } else {
+          window.location.href = 'index.html';
+        }
+      });
+    }
 
     function startCountdown() {
       const interval = setInterval(() => {
@@ -189,7 +205,7 @@
         if (timeLeft <= 0) {
           clearInterval(interval);
           btn.classList.add('active');
-          btn.href = url;
+          btn.href = url; // abrirá en la misma pestaña
           counter.textContent = "¡Listo!";
         }
       }, 1000);
