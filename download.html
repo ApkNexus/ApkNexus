@@ -11,19 +11,45 @@
       color: #eee;
       text-align: center;
       padding: 40px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-    h1 { color: #00ffaa; text-shadow: 0 0 8px #00ffaa; }
-    .counter {
-      font-size: 2.5rem;
-      margin: 20px 0;
-      color: #ffcc00;
+
+    h1 {
+      color: #00ffaa;
+      text-shadow: 0 0 8px #00ffaa;
+      margin-bottom: 10px;
     }
+
+    p {
+      color: #bbb;
+      margin-bottom: 20px;
+    }
+
     .ads {
-      margin: 20px 0;
+      margin: 20px auto;
       padding: 20px;
-      background: #141414;
-      border-radius: 10px;
+      background: linear-gradient(180deg, #141414, #111111);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,255,170,0.08);
+      max-width: 600px;
     }
+
+    .counter {
+      font-size: 3rem;
+      margin: 30px 0;
+      color: #ffcc00;
+      font-weight: bold;
+      text-shadow: 0 0 12px rgba(255, 204, 0, 0.6);
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
     .btn-download {
       display: inline-block;
       padding: 14px 28px;
@@ -37,28 +63,50 @@
       pointer-events: none; /* desactivado hasta que termine el contador */
       opacity: 0.6;
     }
+
     .btn-download.active {
       pointer-events: auto;
       opacity: 1;
+      animation: glow 1s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 20px rgba(0,255,170,0.4); }
+      to { box-shadow: 0 0 40px rgba(0,255,170,0.8); }
+    }
+
+    footer {
+      margin-top: 40px;
+      color: #777;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <h1>Preparando tu descarga...</h1>
-  <p>Por favor espera mientras activamos el enlace.</p>
+  <p>Haz click o toca la pantalla para iniciar el contador.</p>
 
+  <!-- Espacio para anuncios arriba -->
   <div class="ads">
-    <!-- Aquí puedes poner banners o scripts de anuncios -->
-    <p>Espacio para anuncios</p>
+    <p>Espacio para anuncios (banner superior)</p>
   </div>
 
+  <!-- Contador -->
   <div class="counter" id="counter">7</div>
 
+  <!-- Botón de descarga -->
   <a id="downloadBtn" class="btn-download">⬇ Descargar APK</a>
+
+  <!-- Espacio para anuncios abajo -->
+  <div class="ads" style="margin-top:30px;">
+    <p>Espacio para anuncios (banner inferior)</p>
+  </div>
+
+  <footer>© 2025 APK Nexus — Todos los derechos reservados</footer>
 
   <script>
     const params = new URLSearchParams(window.location.search);
-    const url = params.get('url'); // el enlace real de descarga
+    const url = params.get('url'); // enlace real de descarga
     let timeLeft = 7;
     const counter = document.getElementById('counter');
     const btn = document.getElementById('downloadBtn');
@@ -76,7 +124,7 @@
       }, 1000);
     }
 
-    // Inicia el contador cuando el usuario toca la pantalla o hace click
+    // Inicia el contador al primer click/tap
     document.body.addEventListener('click', () => {
       if (timeLeft === 7) startCountdown();
     }, { once: true });
