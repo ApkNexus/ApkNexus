@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Descarga - APK Nexus</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d0d0d;
+      color: #eee;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 { color: #00ffaa; text-shadow: 0 0 8px #00ffaa; }
+    .counter {
+      font-size: 2.5rem;
+      margin: 20px 0;
+      color: #ffcc00;
+    }
+    .ads {
+      margin: 20px 0;
+      padding: 20px;
+      background: #141414;
+      border-radius: 10px;
+    }
+    .btn-download {
+      display: inline-block;
+      padding: 14px 28px;
+      background: #00ffaa;
+      color: #0d0d0d;
+      font-weight: bold;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 0 20px rgba(0,255,170,0.4);
+      transition: 0.3s;
+      pointer-events: none; /* desactivado hasta que termine el contador */
+      opacity: 0.6;
+    }
+    .btn-download.active {
+      pointer-events: auto;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Preparando tu descarga...</h1>
+  <p>Por favor espera mientras activamos el enlace.</p>
+
+  <div class="ads">
+    <!-- Aquí puedes poner banners o scripts de anuncios -->
+    <p>Espacio para anuncios</p>
+  </div>
+
+  <div class="counter" id="counter">7</div>
+
+  <a id="downloadBtn" class="btn-download">⬇ Descargar APK</a>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const url = params.get('url'); // el enlace real de descarga
+    let timeLeft = 7;
+    const counter = document.getElementById('counter');
+    const btn = document.getElementById('downloadBtn');
+
+    function startCountdown() {
+      const interval = setInterval(() => {
+        timeLeft--;
+        counter.textContent = timeLeft;
+        if (timeLeft <= 0) {
+          clearInterval(interval);
+          btn.classList.add('active');
+          btn.href = url;
+          counter.textContent = "¡Listo!";
+        }
+      }, 1000);
+    }
+
+    // Inicia el contador cuando el usuario toca la pantalla o hace click
+    document.body.addEventListener('click', () => {
+      if (timeLeft === 7) startCountdown();
+    }, { once: true });
+  </script>
+</body>
+</html>
