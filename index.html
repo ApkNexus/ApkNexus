@@ -13,6 +13,7 @@
       font-family: 'Segoe UI', sans-serif;
       background: #0d0d0d;
       color: #eee;
+      padding-bottom: 70px; /* espacio para menú inferior */
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
@@ -26,7 +27,6 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.4);
     }
 
-    /* Contenedor del logo y texto */
     .logo-container {
       display: flex;
       align-items: center;
@@ -68,7 +68,6 @@
       border-radius: 10px;
     }
 
-    /* Buscar */
     .search-bar {
       text-align: center;
       margin: 20px auto;
@@ -92,7 +91,6 @@
       box-shadow: 0 0 12px rgba(0, 255, 170, 0.25);
     }
 
-    /* Contenedor */
     #apps-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -105,35 +103,19 @@
     }
 
     @media (min-width: 480px) and (max-width: 999px) {
-      #apps-container {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      #apps-container { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (min-width: 1000px) {
-      #apps-container {
-        grid-template-columns: repeat(3, 1fr);
-      }
+      #apps-container { grid-template-columns: repeat(3, 1fr); }
     }
 
     @media (max-width: 479px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .logo-container {
-        justify-content: center;
-        margin-bottom: 8px;
-      }
-
-      #apps-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-      }
+      header { flex-direction: column; text-align: center; }
+      .logo-container { justify-content: center; margin-bottom: 8px; }
+      #apps-container { grid-template-columns: repeat(2, 1fr); gap: 16px; }
     }
 
-    /* Tarjetas */
     .card {
       display: flex;
       flex-direction: column;
@@ -193,6 +175,41 @@
       font-size: 0.9em;
       border-top: 1px solid #1f1f1f;
     }
+
+    /* Menú inferior fijo */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #141414;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      border-top: 1px solid #1f1f1f;
+      z-index: 100;
+    }
+
+    .bottom-nav a {
+      color: #eee;
+      text-align: center;
+      font-size: 0.8rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .bottom-nav a:hover {
+      color: #00ffaa;
+    }
+
+    .bottom-nav svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
   </style>
 </head>
 <body>
@@ -210,26 +227,21 @@
     </a>
   </div>
 
-  <!-- Buscar -->
   <div class="search-bar">
     <input type="text" id="searchInput" placeholder="🔍 Buscar aplicaciones..." />
   </div>
 
-  <!-- Contenedor de apps -->
   <div id="apps-container"></div>
 
   <footer>
     <p>© 2025 APK Nexus. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Limpieza segura -->
-  <script>
-    (function(){
-      const c = document.getElementById('apps-container');
-      if (c) c.innerHTML = '';
-    })();
-  </script>
-
-  <script src="scripts/loadApps.js"></script>
-</body>
-</html>
+  <!-- Menú inferior fijo -->
+  <nav class="bottom-nav">
+    <a href="index.html">
+      <svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>
+      <span>Inicio</span>
+    </a>
+    <a href="https://youtube.com/@apknexus-n4x?si=ad3EQERCplN1RXGJ" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M10 15.5l6-3.5-6-3.5v7zm13-5.5s-.2-1.6-.8-2.3c-.8-.9-1.7-.9-2.1-1C
