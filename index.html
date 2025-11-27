@@ -135,7 +135,7 @@
       width: 100%;
       max-width: 240px;
       height: 300px;
-      overflow: hidden;
+      overflow: hidden.
     }
 
     .card:hover {
@@ -270,5 +270,26 @@
 
   <!-- Mantén el script de carga al final -->
   <script src="scripts/loadApps.js"></script>
+
+  <!-- Popunder Adsterra: se abre en el primer clic/tap y no se repite en la misma carga -->
+  <script>
+    (function () {
+      let popOnce = false;
+      function triggerPopunder() {
+        if (popOnce) return;
+        popOnce = true;
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = '//pl28147419.effectivegatecpm.com/4a/0b/00/4a0b001688a2f98a66e8771d3e82a972.js';
+        s.async = true;
+        document.body.appendChild(s);
+        document.removeEventListener('click', triggerPopunder, true);
+        document.removeEventListener('touchstart', triggerPopunder, true);
+      }
+      const opts = { once: true, passive: true, capture: true };
+      document.addEventListener('click', triggerPopunder, opts);
+      document.addEventListener('touchstart', triggerPopunder, opts);
+    })();
+  </script>
 </body>
-        </html>
+</html>
