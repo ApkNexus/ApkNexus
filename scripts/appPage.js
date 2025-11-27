@@ -32,7 +32,8 @@ fetch('data/apps.json')
         </div>
 
         <div class="download-section" data-aos="zoom-in">
-          <a href="${app.download}" class="btn-download" target="_blank">⬇ Descargar APK</a>
+          <a href="download.html?url=${encodeURIComponent(app.download)}" 
+             class="btn-download" target="_blank">⬇ Descargar APK</a>
         </div>
       </div>
     `;
