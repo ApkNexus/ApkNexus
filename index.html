@@ -135,7 +135,7 @@
       width: 100%;
       max-width: 240px;
       height: 300px;
-      overflow: hidden.
+      overflow: hidden;
     }
 
     .card:hover {
@@ -271,24 +271,24 @@
   <!-- Mantén el script de carga al final -->
   <script src="scripts/loadApps.js"></script>
 
-  <!-- Popunder Adsterra: se abre en el primer clic/tap y no se repite en la misma carga -->
+  <!-- Popunder Adsterra: activa el snippet exacto tras la primera interacción del usuario -->
   <script>
-    (function () {
-      let popOnce = false;
-      function triggerPopunder() {
-        if (popOnce) return;
-        popOnce = true;
-        var s = document.createElement('script');
-        s.type = 'text/javascript';
-        s.src = '//pl28147419.effectivegatecpm.com/4a/0b/00/4a0b001688a2f98a66e8771d3e82a972.js';
-        s.async = true;
-        document.body.appendChild(s);
-        document.removeEventListener('click', triggerPopunder, true);
-        document.removeEventListener('touchstart', triggerPopunder, true);
+    (function() {
+      let fired = false;
+      function activatePopunder() {
+        if (fired) return;
+        fired = true;
+        // Crea el tag EXACTO que te dio Adsterra (no se altera el contenido)
+        var tag = document.createElement('script');
+        tag.type = 'text/javascript';
+        tag.src = '//pl28147419.effectivegatecpm.com/4a/0b/00/4a0b001688a2f98a66e8771d3e82a972.js';
+        // Inserta al final del body para no interferir con tus scripts
+        document.body.appendChild(tag);
       }
-      const opts = { once: true, passive: true, capture: true };
-      document.addEventListener('click', triggerPopunder, opts);
-      document.addEventListener('touchstart', triggerPopunder, opts);
+      // Primer clic o toque del usuario en la página
+      var opts = { once: true, passive: true };
+      document.addEventListener('click', activatePopunder, opts);
+      document.addEventListener('touchstart', activatePopunder, opts);
     })();
   </script>
 </body>
