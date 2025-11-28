@@ -198,7 +198,7 @@
       .back-btn svg { width: 16px; height: 16px; }
     }
 
-    /* Menú inferior fijo (igual al index) */
+    /* Menú inferior fijo */
     .bottom-nav {
       position: fixed;
       bottom: 0;
@@ -221,13 +221,10 @@
       gap: 4px;
       color: #eee;
     }
-    .bottom-nav svg {
-      width: 26px;
-      height: 26px;
-    }
-    .bottom-nav a.home svg { fill: #eee; }       /* casa en blanco */
-    .bottom-nav a.youtube svg { fill: #FF0000; } /* YouTube rojo */
-    .bottom-nav a.telegram svg { fill: #0088cc;} /* Telegram azul */
+    .bottom-nav svg { width: 26px; height: 26px; }
+    .bottom-nav a.home svg { fill: #eee; }
+    .bottom-nav a.youtube svg { fill: #FF0000; }
+    .bottom-nav a.telegram svg { fill: #0088cc; }
   </style>
 </head>
 
@@ -244,25 +241,44 @@
 
   <main id="app-details"></main>
 
+  <!-- DESCARGA + BANNER -->
+  <div class="download-section">
+      <a id="downloadBtn" class="btn-download">⬇ Descargar APK</a>
+
+      <!-- Banner 300x250 -->
+      <div style="margin-top:20px; display:flex; justify-content:center;">
+        <script type="text/javascript">
+          atOptions = {
+            'key' : 'de2a06d42d114df20a9155b8d28fa448',
+            'format' : 'iframe',
+            'height' : 250,
+            'width' : 300,
+            'params' : {}
+          };
+        </script>
+        <script type="text/javascript" src="//begband.com/de2a06d42d114df20a9155b8d28fa448/invoke.js"></script>
+      </div>
+  </div>
+
   <footer>© 2025 APK Nexus — Todos los derechos reservados</footer>
 
-  <!-- Menú inferior fijo -->
+  <!-- Menú inferior -->
   <nav class="bottom-nav">
     <a href="index.html" class="home">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M3 12l9-9 9 9v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/>
-      </svg>
+      <svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>
       <span>Inicio</span>
     </a>
+
     <a href="https://youtube.com/@apknexus-n4x?si=ad3EQERCplN1RXGJ" target="_blank" rel="noopener" class="youtube">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
         <path d="M23.5 6.2c-.1-.7-.3-1.6-.8-2.3-.8-.9-1.7-.9-2.1-1C17.9 2.5 12 2.5 12 2.5s-5.9 0-8.6.4c-.4.1-1.3.1-2.1 1-.6.7-.8 1.6-.8 2.3C0 8.1 0 10 0 10v4c0 1.9.2 3.8.2 3.8.1.7.3 1.6.8 2.3.8.9 1.9.9 2.4 1 1.7.2 7.2.4 8.6.4s6.9-.1 8.6-.4c.4-.1 1.3-.1 2.1-1 .5-.7.7-1.6.8-2.3.2-1.2.2-3.8.2-3.8V10s0-2.6-.2-3.8z"/>
         <polygon fill="#fff" points="9.5,15.5 15.7,12 9.5,8.5"/>
       </svg>
       <span>YouTube</span>
     </a>
+
     <a href="https://t.me/APK_Nexus" target="_blank" rel="noopener" class="telegram">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
         <path d="M21.5 3.5L2.4 10.4c-.9.3-.9 1.6 0 1.9l4.9 1.6 1.8 5.6c.3.9 1.4 1.1 2 .4l2.9-3.1 5.5 4c.8.6 2 .1 2.2-.9l3.1-15.1c.2-1-.6-1.8-1.5-1.5z"/>
       </svg>
       <span>Telegram</span>
@@ -274,5 +290,6 @@
   <script>
     AOS.init({ duration: 900, once: true });
   </script>
+
 </body>
 </html>
