@@ -90,6 +90,7 @@
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,255,170,0.08);
       max-width: 600px;
+      cursor: pointer;
     }
 
     .counter {
@@ -117,7 +118,7 @@
       text-decoration: none;
       box-shadow: 0 0 20px rgba(0,255,170,0.4);
       transition: 0.3s;
-      pointer-events: none; /* desactivado hasta que termine el contador */
+      pointer-events: none;
       opacity: 0.6;
     }
 
@@ -155,11 +156,12 @@
 
   <main>
     <h1>Preparando tu descarga...</h1>
-    <p>Haz click o toca la pantalla para iniciar el contador.</p>
+    <p><strong>Haz clic en cualquiera de los anuncios para iniciar el contador.</strong></p>
 
-    <!-- Espacio para anuncios arriba -->
-    <div class="ads">
-      <p>Espacio para anuncios (banner superior)</p>
+    <!-- Anuncio superior -->
+    <div class="ads" id="adTop">
+      <script async="async" data-cfasync="false" src="//begband.com/2bba90bff7c358e09d2f7fea459ba548/invoke.js"></script>
+      <div id="container-2bba90bff7c358e09d2f7fea459ba548"></div>
     </div>
 
     <!-- Contador -->
@@ -168,9 +170,10 @@
     <!-- Botón de descarga -->
     <a id="downloadBtn" class="btn-download">⬇ Descargar APK</a>
 
-    <!-- Espacio para anuncios abajo -->
-    <div class="ads" style="margin-top:30px;">
-      <p>Espacio para anuncios (banner inferior)</p>
+    <!-- Anuncio inferior -->
+    <div class="ads" id="adBottom">
+      <script async="async" data-cfasync="false" src="//begband.com/2bba90bff7c358e09d2f7fea459ba548/invoke.js"></script>
+      <div id="container-2bba90bff7c358e09d2f7fea459ba548"></div>
     </div>
   </main>
 
@@ -178,14 +181,13 @@
 
   <script>
     const params = new URLSearchParams(window.location.search);
-    const url = params.get('url');     // enlace real de descarga
-    const appId = params.get('id');    // id para volver al detalle
+    const url = params.get('url');
+    const appId = params.get('id');
     let timeLeft = 7;
     const counter = document.getElementById('counter');
     const btn = document.getElementById('downloadBtn');
     const backBtn = document.getElementById('backBtn');
 
-    // Configura el botón Volver
     if (appId) {
       backBtn.href = `app.html?id=${encodeURIComponent(appId)}`;
     } else {
@@ -206,16 +208,20 @@
         if (timeLeft <= 0) {
           clearInterval(interval);
           btn.classList.add('active');
-          btn.href = url; // abrirá en la misma pestaña
+          btn.href = url;
           counter.textContent = "¡Listo!";
         }
       }, 1000);
     }
 
-    // Inicia el contador al primer click/tap
-    document.body.addEventListener('click', () => {
+    // Solo inicia el contador si hacen clic en los contenedores de anuncio
+    document.getElementById("adTop").addEventListener("click", () => {
       if (timeLeft === 7) startCountdown();
-    }, { once: true });
+    });
+
+    document.getElementById("adBottom").addEventListener("click", () => {
+      if (timeLeft === 7) startCountdown();
+    });
   </script>
 </body>
 </html>
