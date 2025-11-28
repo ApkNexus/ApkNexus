@@ -5,6 +5,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Descarga - APK Nexus</title>
+
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -63,10 +64,6 @@
       transform: translateX(-3px);
     }
 
-    .back-btn:hover svg {
-      stroke: #0d0d0d;
-    }
-
     main {
       text-align: center;
       padding: 40px 20px;
@@ -81,8 +78,10 @@
     p {
       color: #bbb;
       margin-bottom: 20px;
+      font-size: 1.05rem;
     }
 
+    /* --- Caja de anuncios simétrica --- */
     .ads {
       margin: 20px auto;
       padding: 20px;
@@ -91,8 +90,21 @@
       box-shadow: 0 4px 12px rgba(0,255,170,0.08);
       max-width: 600px;
       cursor: pointer;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 260px; /* asegura simetría entre los banners */
     }
 
+    .ads > div,
+    .ads iframe {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* --- Contador --- */
     .counter {
       font-size: 3rem;
       margin: 30px 0;
@@ -108,6 +120,7 @@
       100% { transform: scale(1); }
     }
 
+    /* --- Botón de descarga --- */
     .btn-download {
       display: inline-block;
       padding: 14px 28px;
@@ -143,85 +156,95 @@
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <a id="backBtn" href="#" class="back-btn">
-      <svg viewBox="0 0 24 24">
-        <path d="M15 18l-6-6 6-6" />
-      </svg>
-      Volver
-    </a>
-    <span>APK Nexus</span>
-  </header>
 
-  <main>
-    <h1>Preparando tu descarga...</h1>
-    <p><strong>Haz clic en cualquiera de los anuncios para iniciar el contador.</strong></p>
+<header>
+  <a id="backBtn" href="#" class="back-btn">
+    <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+    Volver
+  </a>
+  <span>APK Nexus</span>
+</header>
 
-    <!-- Anuncio superior -->
-    <div class="ads" id="adTop">
-      <script async="async" data-cfasync="false" src="//begband.com/2bba90bff7c358e09d2f7fea459ba548/invoke.js"></script>
+<main>
+  <h1>Preparando tu descarga...</h1>
+  <p><strong>Haz clic en un anuncio para desbloquear el contador.</strong></p>
+
+  <!-- ANUNCIO SUPERIOR (Native Banner) -->
+  <div class="ads" id="adTop">
+    <div>
+      <script async data-cfasync="false" src="//begband.com/2bba90bff7c358e09d2f7fea459ba548/invoke.js"></script>
       <div id="container-2bba90bff7c358e09d2f7fea459ba548"></div>
     </div>
+  </div>
 
-    <!-- Contador -->
-    <div class="counter" id="counter">7</div>
+  <div class="counter" id="counter">7</div>
 
-    <!-- Botón de descarga -->
-    <a id="downloadBtn" class="btn-download">⬇ Descargar APK</a>
+  <a id="downloadBtn" class="btn-download">⬇ Descargar APK</a>
 
-    <!-- Anuncio inferior -->
-    <div class="ads" id="adBottom">
-      <script async="async" data-cfasync="false" src="//begband.com/2bba90bff7c358e09d2f7fea459ba548/invoke.js"></script>
-      <div id="container-2bba90bff7c358e09d2f7fea459ba548"></div>
+  <!-- ANUNCIO INFERIOR (Banner 300x250) -->
+  <div class="ads" id="adBottom">
+    <div>
+      <script type="text/javascript">
+        atOptions = {
+          'key' : 'de2a06d42d114df20a9155b8d28fa448',
+          'format' : 'iframe',
+          'height' : 250,
+          'width' : 300,
+          'params' : {}
+        };
+      </script>
+      <script type="text/javascript" src="//begband.com/de2a06d42d114df20a9155b8d28fa448/invoke.js"></script>
     </div>
-  </main>
+  </div>
+</main>
 
-  <footer>© 2025 APK Nexus — Todos los derechos reservados</footer>
+<footer>© 2025 APK Nexus — Todos los derechos reservados</footer>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const url = params.get('url');
-    const appId = params.get('id');
-    let timeLeft = 7;
-    const counter = document.getElementById('counter');
-    const btn = document.getElementById('downloadBtn');
-    const backBtn = document.getElementById('backBtn');
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const url = params.get('url');
+  const appId = params.get('id');
 
-    if (appId) {
-      backBtn.href = `app.html?id=${encodeURIComponent(appId)}`;
-    } else {
-      backBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (document.referrer) {
-          history.back();
-        } else {
-          window.location.href = 'index.html';
-        }
-      });
-    }
+  let timeLeft = 7;
+  const counter = document.getElementById('counter');
+  const btn = document.getElementById('downloadBtn');
+  const backBtn = document.getElementById('backBtn');
 
-    function startCountdown() {
-      const interval = setInterval(() => {
-        timeLeft--;
-        counter.textContent = timeLeft;
-        if (timeLeft <= 0) {
-          clearInterval(interval);
-          btn.classList.add('active');
-          btn.href = url;
-          counter.textContent = "¡Listo!";
-        }
-      }, 1000);
-    }
-
-    // Solo inicia el contador si hacen clic en los contenedores de anuncio
-    document.getElementById("adTop").addEventListener("click", () => {
-      if (timeLeft === 7) startCountdown();
+  if (appId) {
+    backBtn.href = `app.html?id=${encodeURIComponent(appId)}`;
+  } else {
+    backBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (document.referrer) {
+        history.back();
+      } else {
+        window.location.href = 'index.html';
+      }
     });
+  }
 
-    document.getElementById("adBottom").addEventListener("click", () => {
-      if (timeLeft === 7) startCountdown();
-    });
-  </script>
+  function startCountdown() {
+    const interval = setInterval(() => {
+      timeLeft--;
+      counter.textContent = timeLeft;
+      if (timeLeft <= 0) {
+        clearInterval(interval);
+        btn.classList.add('active');
+        btn.href = url;
+        counter.textContent = "¡Listo!";
+      }
+    }, 1000);
+  }
+
+  const startOnClick = () => {
+    if (timeLeft === 7) startCountdown();
+  };
+
+  document.getElementById("adTop").addEventListener("click", startOnClick);
+  document.getElementById("adBottom").addEventListener("click", startOnClick);
+</script>
+
 </body>
 </html>
