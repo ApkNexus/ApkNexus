@@ -95,8 +95,9 @@
     "download": "https://www.mediafire.com/folder/32mm44sqac8f9/Ytpremium",
     "install_steps": [
       "Descarga el archivo APK desde el botón de abajo.",
-      "Ve a la configuración de tu teléfono y habilita “Orígenes desconocidos”.",
-      "El archivo APK debe tener \"@ApkNexus\" al final del nombre."
+      "Instala la aplicación microG.",
+      "Luego instala YouTube Premium y Accede a tu cuenta.",
+      "Siga estos pasos para solucionar el problema de se detuvo el video: ve a los ajustes dentro de YouTube (Configuración) > YouTube Premium Settings > Otros > Falsificar datos de trasmisión > habilita la opción ‘Falsificar datos de trasmisión’."
     ]
   },
   {
