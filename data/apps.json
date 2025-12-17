@@ -36,13 +36,13 @@
   {
     "id": "minecraft-bedrock-android",
     "name": "Minecraft PE (Android)",
-    "version": "1.21.130.3",
-    "date": "14 Diciembre 2025",
+    "version": "1.21.131.1",
+    "date": "16 Diciembre 2025",
     "size": "800 MB",
     "license": "Gratis (Mod)",
     "description": "Minecraft Bedrock Edition es la versión móvil del juego de construcción y aventura más popular del mundo. Explora mundos infinitos, construye todo lo que puedas imaginar, sobrevive contra monstruos y juega con amigos desde tu móvil.",
     "image": "minecraft.png",
-    "download": "https://www.mediafire.com/file/27px86tm6ilxedt/Minecraft_v1.21.130.3_%2540ApkNexus.apk/file",
+    "download": "https://www.mediafire.com/file/a0pkgl64245mg5x/Minecraft_v1.21.131.1_%2540ApkNexus.apk/file",
     "install_steps": [
       "Descarga el archivo APK desde el botón de abajo.",
       "Ve a la configuración de tu teléfono y habilita “Orígenes desconocidos”.",
