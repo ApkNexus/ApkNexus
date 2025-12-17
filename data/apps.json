@@ -86,13 +86,13 @@
   {
     "id": "youtube-premium-mod",
     "name": "YouTube Premium (Mod)",
-    "version": "20.50.33",
-    "date": "12 Diciembre 2025",
+    "version": "20.50.38",
+    "date": "16 Diciembre 2025",
     "size": "130 MB",
     "license": "Gratis (Mod)",
     "description": "YouTube Premium Mod permite reproducir música y videos en segundo plano y en ventana emergente (Picture-in-Picture). Esta versión incluye la función de descarga de videos. Ideal para quienes buscan una experiencia sin interrupciones ni anuncios.",
     "image": "youtube.png",
-    "download": "https://www.mediafire.com/folder/32mm44sqac8f9/Ytpremium",
+    "download": "https://www.mediafire.com/folder/ayxjvnv4qg34k/Youtube+premium",
     "install_steps": [
       "Descarga el archivo APK desde el botón de abajo.",
       "Instala la aplicación microG.",
