@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Popunder adsterra -->
-  <script
-  type="text/javascript"
-  src="//kindergartenharness.com/4a/0b/00/4a0b001688a2f98a66e8771d3e82a972.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>APK Nexus - Inicio</title>
@@ -156,6 +152,25 @@
       <span>Telegram</span>
     </a>
   </nav>
+
+  <!-- Script de popunder Adsterra activado con primer clic -->
+  <script>
+    function triggerAdsterra() {
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.src = '//kindergartenharness.com/4a/0b/00/4a0b001688a2f98a66e8771d3e82a972.js';
+      document.body.appendChild(s);
+    }
+
+    function handleFirstClick() {
+      triggerAdsterra();
+      window.removeEventListener('click', handleFirstClick);
+      window.removeEventListener('touchstart', handleFirstClick);
+    }
+
+    window.addEventListener('click', handleFirstClick);
+    window.addEventListener('touchstart', handleFirstClick);
+  </script>
 
   <!-- Script de carga de tarjetas -->
   <script src="scripts/loadApps.js"></script>
